@@ -4,3 +4,5 @@
 
 layout: home
 ---
+
+This is CGITEC's homepage
