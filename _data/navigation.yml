@@ -12,3 +12,24 @@ header:
       ko: &KO 소개
       # @end locale config
     url: /about.html
+
+  - titles:
+      # @start locale config
+      en: &EN Products
+      ko: &KO 제품
+      # @end locale config
+    url: /products.html
+
+  - titles:
+      # @start locale config
+      en: &EN Applications
+      ko: &KO 활용분야
+      # @end locale config
+    url: /applications.html
+
+  - titles:
+      # @start locale config
+      en: &EN Contact
+      ko: &KO Contact
+      # @end locale config
+    url: /contact.html
