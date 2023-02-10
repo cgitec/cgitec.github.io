@@ -4,7 +4,7 @@ header:
       en: &EN Home
       ko: &KO 홈
       # @end locale config
-    url: /index.html
+    url: /home.html
 
   - titles:
       # @start locale config
