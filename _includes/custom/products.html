@@ -1,0 +1,154 @@
+<style>
+  .card-wrap {
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .card {
+    flex-basis: 30%;
+    margin-bottom: 5%;
+    box-sizing: border-box;
+    width: 320px;
+    height: 420px;
+    background: #122936;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .card::before {
+    transition: 0.5s;
+  }
+
+  .card:hover::before {
+    transform: skewY(390deg);
+  }
+
+  .card::after {
+    font-weight: 600;
+    font-size: 8em;
+    color: rgba(0, 0, 0, 0.1);
+  }
+
+  .card .imgBx {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    z-index: 1;
+  }
+
+  .card .imgBx img {
+    max-width: 100%;
+    transition: 0.5s;
+  }
+
+  .card:hover .imgBx img {
+    max-width: 50%;
+  }
+
+  .card .contentBx {
+    position: relative;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+  }
+  .card .contentBx h3 {
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .card .contentBx .price {
+    font-size: 24px;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+  .card .contentBx .buy {
+    position: relative;
+    top: 200px;
+    opacity: 0;
+    padding: 10px 30px;
+    margin-top: 15px;
+    columns: #fff;
+    text-decoration: none;
+    background: #2196f3;
+    border-radius: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.5s;
+  }
+
+  .card:hover .contentBx .buy {
+    top: 0;
+    opacity: 1;
+  }
+</style>
+
+<div class="card-wrap">
+  <div class="card">
+    <div class="imgBx">
+      <img src="../../assets/img/H_cover.png" />
+    </div>
+    <div class="contentBx">
+      <h3>
+        Image<br />
+        Spectrometer
+      </h3>
+      <h2 class="price">H-series</h2>
+      <a href="#" class="buy">More</a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="imgBx">
+      <img src="../../assets/img/P_cover.png" />
+    </div>
+    <div class="contentBx">
+      <h3>Collimated Imaging Spectrometer</h3>
+      <h2 class="price">P series</h2>
+      <a href="#" class="buy">More</a>
+    </div>
+  </div>
+</div>
+<div class="card-wrap">
+  <div class="card">
+    <div class="imgBx">
+      <img src="../../assets/img/A_cover.png" />
+    </div>
+    <div class="contentBx">
+      <h3>High-Performance<br />RIID</h3>
+      <h2 class="price">A series</h2>
+      <a href="#" class="buy">More</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="imgBx">
+      <img src="../../assets/img/M_cover.png" />
+    </div>
+    <div class="contentBx">
+      <h3>
+        Custom<br />
+        Spectrometer
+      </h3>
+      <h2 class="price">M-series</h2>
+      <a href="#" class="buy">More</a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="imgBx">
+      <img src="../../assets/img/S_cover.png" />
+    </div>
+    <div class="contentBx">
+      <h3>Industrial Spectrometer</h3>
+      <h2 class="price">S-series</h2>
+      <a href="#" class="buy">More</a>
+    </div>
+  </div>
+</div>
