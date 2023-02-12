@@ -1,0 +1,90 @@
+<style>
+  .use-row {
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .use-col {
+    flex-basis: 32%;
+    border-radius: 10px;
+    /* make overlay possible */
+    position: relative;
+    overflow: hidden;
+  }
+
+  .use-col img {
+    width: 100%;
+    opacity: 90%;
+    display: block;
+  }
+
+  .layer {
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.4s;
+  }
+
+  .layer:hover {
+    background: #32325d;
+    opacity: 90%;
+  }
+
+  .layer h3 {
+    width: 100%;
+    font-weight: 500;
+    color: #fff;
+    font-size: 45px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    opacity: 0;
+    transition: 0.5s;
+  }
+
+  .layer:hover h3 {
+    bottom: 32%;
+    opacity: 1;
+  }
+</style>
+
+
+<div class="use-row">
+  <div class="use-col">
+    <img src="/assets/img/nuclear.jpg" />
+    <div class="layer">
+      <h3>원자력</h3>
+    </div>
+  </div>
+  <div class="use-col">
+    <img src="/assets/img/waste.jpg" />
+    <div class="layer">
+      <h3>방사선 폐기물</h3>
+    </div>
+  </div>
+  <div class="use-col">
+    <img src="/assets/img/cbrn.jpg" />
+    <div class="layer">
+      <h3>화생방</h3>
+    </div>
+  </div>
+</div>
+<div class="use-row">
+  <div class="use-col">
+    <img src="/assets/img/military.jpg" />
+    <div class="layer">
+      <h3>국방</h3>
+    </div>
+  </div>
+  <div class="use-col">
+    <img src="/assets/img/medical.jpg" />
+    <div class="layer">
+      <h3>의료</h3>
+    </div>
+  </div>
+</div>

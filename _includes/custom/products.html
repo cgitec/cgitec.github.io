@@ -5,6 +5,7 @@
     justify-content: space-evenly;
     align-items: center;
   }
+
   .card {
     flex-basis: 30%;
     margin-bottom: 5%;
@@ -15,6 +16,7 @@
     border-radius: 10px;
     overflow: hidden;
   }
+
   .card::before {
     transition: 0.5s;
   }
@@ -57,6 +59,7 @@
     flex-direction: column;
     z-index: 1;
   }
+
   .card .contentBx h3 {
     font-size: 18px;
     color: #fff;
@@ -64,12 +67,14 @@
     text-transform: uppercase;
     letter-spacing: 1px;
   }
+
   .card .contentBx .price {
     font-size: 24px;
     color: #fff;
     font-weight: 500;
     letter-spacing: 1px;
   }
+
   .card .contentBx .buy {
     position: relative;
     top: 200px;
@@ -89,6 +94,12 @@
     top: 0;
     opacity: 1;
   }
+
+  @media (max-width: 700px) {
+    .card-wrap {
+      flex-direction: column;
+    }
+  }
 </style>
 
 <div class="card-wrap">
@@ -101,7 +112,7 @@
         Image<br />
         Spectrometer
       </h3>
-      <h2 class="price">H-series</h2>
+      <h2 class="price">H series</h2>
       <a href="#" class="buy">More</a>
     </div>
   </div>
@@ -137,7 +148,7 @@
         Custom<br />
         Spectrometer
       </h3>
-      <h2 class="price">M-series</h2>
+      <h2 class="price">M series</h2>
       <a href="#" class="buy">More</a>
     </div>
   </div>
@@ -147,7 +158,7 @@
     </div>
     <div class="contentBx">
       <h3>Industrial Spectrometer</h3>
-      <h2 class="price">S-series</h2>
+      <h2 class="price">S series</h2>
       <a href="#" class="buy">More</a>
     </div>
   </div>
