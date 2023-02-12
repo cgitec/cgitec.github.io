@@ -6,26 +6,26 @@ header:
       # @end locale config
     url: /index.html
 
-  - titles:
-      # @start locale config
-      en: &EN About
-      ko: &KO 소개
-      # @end locale config
-    url: /about.html
+  # - titles:
+  #     # @start locale config
+  #     en: &EN About
+  #     ko: &KO 소개
+  #     # @end locale config
+  #   url: /about.html
 
   - titles:
       # @start locale config
       en: &EN Products
       ko: &KO 제품
       # @end locale config
-    url: /products.html
+    url: /products/index.html
 
   - titles:
       # @start locale config
       en: &EN Applications
       ko: &KO 활용분야
       # @end locale config
-    url: /applications.html
+    url: /applications/index.html
 
   - titles:
       # @start locale config

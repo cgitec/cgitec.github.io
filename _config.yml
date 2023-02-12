@@ -168,7 +168,9 @@ analytics:
 ##############################
 markdown: kramdown
 highlighter: rouge
-permalink: date
+permalink: /:categories/:title.html
+
+include: ["_pages", "_posts"]
 
 exclude:
   - CHANGELOG.md
