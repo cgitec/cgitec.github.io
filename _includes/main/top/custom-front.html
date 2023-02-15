@@ -1,5 +1,98 @@
 <!-- start custom main top snippet -->
-<section class="header-me">
+<style>
+  .swiper-demo {
+    height: 90vh;
+
+  }
+
+  .swiper-demo .swiper__slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: #fff;
+  }
+
+  .swiper-demo .slide1 {
+    background-image: linear-gradient(rgba(20, 30, 30, 0.7),
+        rgba(20, 30, 30, 0.7)), url(/assets/img/info_banner1.jpg);
+    background-size: cover;
+  }
+
+  .swiper-demo .slide2 {
+    background-image: linear-gradient(rgba(20, 30, 30, 0.7),
+        rgba(20, 30, 30, 0.7)), url(/assets/img/info_banner2.jpg);
+    background-size: cover;
+  }
+
+  .swiper-demo .slide3 {
+    background-image: linear-gradient(rgba(20, 30, 30, 0.7),
+        rgba(20, 30, 30, 0.7)), url(/assets/img/info_banner3.jpg);
+    background-size: cover;
+  }
+
+  .text {
+    text-align: center;
+  }
+
+  .text h1 {
+    font-size: 60px;
+    color: #fff;
+  }
+
+  .text p {
+    margin: 10px 0 30px;
+    font-size: 20px;
+    color: #fff;
+  }
+</style>
+
+
+<div class="swiper swiper-demo">
+  <div class="swiper__wrapper">
+    <div class="swiper__slide slide1">
+      <div class="text">
+        <h1>방사선원 시각화 토탈 솔루션</h1>
+        <p>
+          실시간 방사선 핵종분석 및 위치추적<br />
+          360도 실시간 이미징 및 HPGe급 에너지분해능<br />
+          레이저를 이용한 거리측정 및 방사선의 정량적 해석<br />
+          방수/방진 및 콤팩트한 디자인
+        </p>
+      </div>
+    </div>
+    <div class="swiper__slide slide2">
+      <div class="text">
+        <h1>현장에서의 압도적인 사용능력</h1>
+        <p>
+          현재 미국의 75% 이상의 원자력발전소가 채용<br />
+          상온에서 1% 이하의 에너지 분해능<br />
+          50keV~3MeV 에너지 구간에서 실시간 감마선 이미징<br />
+          하나의 CZT 센서에서 High-Low Imaging 동시에 가능
+        </p>
+      </div>
+    </div>
+    <div class="swiper__slide slide3">
+      <div class="text">
+        <h1>방사선 응용 어플리케이션 개발</h1>
+        <p>
+          사용자 요구에 부응하는 OEM 개발가능<br />
+          3D Position Sensing (Law-Data) 제공<br />
+          약 1kg 무게에 H400급의 CZT 센서 탑재<br />
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="swiper__button swiper__button--prev fas fa-chevron-left"></div>
+  <div class="swiper__button swiper__button--next fas fa-chevron-right"></div>
+</div>
+
+<script src="/assets/js/lib/swiper.js">
+</script>
+
+<!-- end custom main top snippet -->
+
+<!-- <section class="header-me">
   <div class="text-box">
     <h1>방사선 계측의 새로운 패러다임</h1>
     <p>
@@ -8,5 +101,4 @@
     </p>
     <a href="" class="hero-btn">About Us</a>
   </div>
-</section>
-<!-- end custom main top snippet -->
+</section> -->

@@ -96,28 +96,13 @@
   padding: 10px;
 }
 
-.info-col1 {
+/* .info-col1 {
   background-image: linear-gradient(
       rgba(20, 30, 30, 0.8),
       rgba(20, 30, 30, 0.8)
     ),
     url(../img/info_banner1.jpg);
-}
-
-.info-col2 {
-  background-image: linear-gradient(
-      rgba(20, 30, 30, 0.8),
-      rgba(20, 30, 30, 0.8)
-    ),
-    url(../img/info_banner2.jpg);
-}
-.info-col3 {
-  background-image: linear-gradient(
-      rgba(20, 30, 30, 0.8),
-      rgba(20, 30, 30, 0.8)
-    ),
-    url(../img/info_banner3.png);
-}
+} */
 
 .info-col:hover {
   box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.7);
@@ -135,7 +120,7 @@
   width: 75%;
   margin: auto;
   text-align: center;
-  padding-top: 100px;
+  padding-top: 50px;
 }
 
 /* use */
