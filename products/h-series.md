@@ -45,7 +45,10 @@ article_header:
 
 <div class="container">
 <div class="item1">
+<span style="font-weight:bold">Industrial Imaging Spectrometer</span>
+<br>
 Industrial Imaging Spectrometer: H3D® H Series는 현재 미국 내 전체 원자력발전소 중 75% 가 방사선 안전을 위해 활발하게 사용하고 있습니다. H Series 와 P Series 는 방사선 안전을 위한 가장 훌륭한 솔류션입니다. 원자력발전소와 같은 방사선 환경에서 사용되는 [16가지 예제]를 확인해보세요. S Series 는 특정위치에서 방사선원의 변화를 지속적으로 모니터링 하는데 최적화되어 있습니다.
+
 </div>
 <div class="item2">
 <img src="/assets/img/H_cover.png">
