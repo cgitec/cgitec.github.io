@@ -1,4 +1,369 @@
 <!-- start custom main top snippet -->
+<!-- 
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1D212B;
+  }
+
+  .img-slider {
+    position: relative;
+    width: 800px;
+    height: 500px;
+    margin: 10px;
+    background: #1D212B;
+  }
+
+  .img-slider .slide {
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+  }
+
+  .img-slider .slide .active {
+    clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+
+  }
+
+  .img-slider .slide img {
+    z-index: 1;
+    position: absolute;
+    border-radius: 5px;
+  }
+
+  .img-slider .slide .info {
+    position: absolute;
+    top: 0;
+    padding: 15px 30px;
+  }
+
+  .img-slider .slide .info h1 {
+    color: #fff;
+    font-size: 45px;
+    letter-spacing: 2px;
+  }
+
+  .img-slider .slide .info p {
+    color: #fff;
+    background: rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    width: 60%;
+    padding: 10px;
+    border-radius: 4px;
+  }
+
+  .img-slider .navigation .btn {
+    background: rgba(255, 255, 255, 0.5);
+    width: 12px;
+    height: 12px;
+    margin: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  @media (max-width : 820px) {
+    .img-slider {
+      width: 320px;
+      height: 200px;
+    }
+
+    .img-slider .slide .info {
+      padding: 5px 10px;
+    }
+
+    .img-slider .slide h1 {
+      font-size: 25px;
+    }
+
+    .img-slider .slide p {
+      width: 90%;
+      font-size: 11px;
+    }
+
+    .img-slider .navigation {
+      bottom: 10px;
+    }
+
+  }
+</style>
+
+<div class="img-slider">
+  <div class="slide active">
+    <img src="/assets/img/info_banner1.jpg" alt="">
+    <div class="info">
+      <h1>방사선원 시각화 토탈 솔루션</h1>
+      <p>
+        실시간 방사선 핵종분석 및 위치추적<br />
+        360도 실시간 이미징 및 HPGe급 에너지분해능<br />
+        레이저를 이용한 거리측정 및 방사선의 정량적 해석<br />
+        방수/방진 및 콤팩트한 디자인
+      </p>
+    </div>
+    <div class="slide">
+      <img src="/assets/img/info_banner2.jpg" alt="">
+      <div class="info">
+        <h1>현장에서의 압도적인 사용능력</h1>
+        <p>
+          현재 미국의 75% 이상의 원자력발전소가 채용<br />
+          상온에서 1% 이하의 에너지 분해능<br />
+          50keV~3MeV 에너지 구간에서 실시간 감마선 이미징<br />
+          하나의 CZT 센서에서 High-Low Imaging 동시에 가능
+        </p>
+      </div>
+      <div class="slide">
+        <img src="/assets/img/info_banner3.jpg" alt="">
+        <div class="info">
+          <h1>방사선 응용 어플리케이션 개발</h1>
+          <p>
+            사용자 요구에 부응하는 OEM 개발가능<br />
+            3D Position Sensing (Law-Data) 제공<br />
+            약 1kg 무게에 H400급의 CZT 센서 탑재<br />
+          </p>
+        </div>
+      </div>
+      <div class="navigation">
+        <div class="btn"></div>
+        <div class="btn"></div>
+        <div class="btn"></div>
+      </div>
+
+    </div>
+
+    <script type="text/javascript">
+      var slides = document.querySelectorAll('.slide');
+      var btns = document.querySelectorAll('.btn');
+      let currentSlide = 1;
+
+      var manualNav = function (manual) {
+        slides.forEach((slide) => {
+          slide.classList.remove('active');
+
+          btns.forEach((btn) => {
+            btn.classList.remove('active');
+          });
+        });
+        slides[manual].classList.add('active');
+        btns[manual].classList.add('active');
+      }
+
+      btns.forEach((btn, i) => {
+        btn.addEventListener("click", () => {
+          manualNav(i);
+          currentSlide = i;
+        });
+      });
+
+    </script> -->
+
+<!-- last working -->
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+  }
+
+  .slider {
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+  }
+
+  .slides {
+    width: 500%;
+    height: 500px;
+    display: flex;
+  }
+
+  .slides input {
+    display: none;
+  }
+
+  .slide {
+    width: 20%;
+    transition: 2s;
+    position: relative
+  }
+
+  .slide img {
+    width: 100%;
+    height: 70vh;
+    opacity: 0.9;
+    filter: brightness(30%);
+  }
+
+  span {
+    position: absolute;
+    top: 90px;
+    left: 200px;
+  }
+
+  span h1 {
+    font-size: 55px;
+    color: #fff;
+  }
+
+  span p {
+    font-size: 20px;
+    color: #fff;
+  }
+
+  .navigation-manual {
+    position: absolute;
+    width: 100%;
+    margin-top: 420px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .manual-btn {
+    border: 2px solid #fff;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+  }
+
+  .manual-btn:not(:last-child) {
+    margin-right: 40px;
+  }
+
+  .manual-btn:hover {
+    background: #fff;
+  }
+
+  #radio1:checked~.first {
+    margin-left: 0;
+  }
+
+  #radio2:checked~.first {
+    margin-left: -20%;
+  }
+
+  #radio3:checked~.first {
+    margin-left: -40%;
+  }
+
+  /*  */
+
+  .navigation-auto {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 420px;
+  }
+
+  .navigation-auto div {
+    border: 2px solid #fff;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+  }
+
+  .navigation-auto div:not(:last-child) {
+    margin-right: 40px;
+  }
+
+  #radio1:checked~.navigation-auto .auto-btn1 {
+    background: #fff;
+  }
+
+  #radio2:checked~.navigation-auto .auto-btn2 {
+    background: #fff;
+  }
+
+  #radio3:checked~.navigation-auto .auto-btn3 {
+    background: #fff;
+  }
+</style>
+
+<div class="slider">
+  <div class="slides">
+    <input type="radio" name="radio-btn" id="radio1">
+    <input type="radio" name="radio-btn" id="radio2">
+    <input type="radio" name="radio-btn" id="radio3">
+
+    <div class="slide first">
+      <img src="/assets/img/info_banner1.jpg" alt="">
+      <span>
+        <h1>방사선원 시각화 토탈 솔루션</h1>
+        <p>
+          실시간 방사선 핵종분석 및 위치추적<br />
+          360도 실시간 이미징 및 HPGe급 에너지분해능<br />
+          레이저를 이용한 거리측정 및 방사선의 정량적 해석<br />
+          방수/방진 및 콤팩트한 디자인
+        </p>
+      </span>
+    </div>
+    <div class="slide">
+      <img src="/assets/img/info_banner2.jpg" alt="">
+      <span>
+        <h1>현장에서의 압도적인 사용능력</h1>
+        <p>
+          현재 미국의 75% 이상의 원자력발전소가 채용<br />
+          상온에서 1% 이하의 에너지 분해능<br />
+          50keV~3MeV 에너지 구간에서 실시간 감마선 이미징<br />
+          하나의 CZT 센서에서 High-Low Imaging 동시에 가능
+        </p>
+      </span>
+
+    </div>
+    <div class="slide">
+      <img src="/assets/img/info_banner3.jpg" alt="">
+      <span>
+        <h1>방사선 응용 어플리케이션 개발</h1>
+        <p>
+          사용자 요구에 부응하는 OEM 개발가능<br />
+          3D Position Sensing (Law-Data) 제공<br />
+          약 1kg 무게에 H400급의 CZT 센서 탑재<br />
+        </p>
+      </span>
+    </div>
+
+
+    <div class="navigation-auto">
+      <div class="auto-btn1"></div>
+      <div class="auto-btn2"></div>
+      <div class="auto-btn3"></div>
+    </div>
+
+    <div class="navigation-manual">
+      <label for="radio1" class="manual-btn"></label>
+      <label for="radio2" class="manual-btn"></label>
+      <label for="radio3" class="manual-btn"></label>
+    </div>
+
+  </div>
+</div>
+
+<script type="text/javascript">
+  var counter = 1;
+  setInterval(function () {
+    document.getElementById('radio' + counter).checked = true;
+    counter++;
+    if (counter > 4) {
+      counter = 1;
+    }
+  }, 5000);
+
+</script>
+<!-- 
 <style>
   .swiper-demo {
     height: 55vh;
@@ -87,17 +452,4 @@
 </div>
 
 <script src="/assets/js/lib/swiper.js">
-</script>
-
-<!-- end custom main top snippet -->
-
-<!-- <section class="header-me">
-  <div class="text-box">
-    <h1>방사선 계측의 새로운 패러다임</h1>
-    <p>
-      실시간 방사선 이미징, 광범위한 사용을 통한 성능입증,<br />
-      직관적인 인터페이스로 사용자 편의를 극대화한 방사선원 시각화 솔루션
-    </p>
-    <a href="" class="hero-btn">About Us</a>
-  </div>
-</section> -->
+</script> -->

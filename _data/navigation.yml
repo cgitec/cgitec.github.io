@@ -2,7 +2,7 @@ header:
   - titles:
       # @start locale config
       en: &EN Home
-      ko: &KO 홈
+      # ko: &KO 홈
       # @end locale config
     url: /index.html
 
@@ -16,14 +16,14 @@ header:
   - titles:
       # @start locale config
       en: &EN Products
-      ko: &KO 제품
+      # ko: &KO 제품
       # @end locale config
     url: /products/index.html
 
   - titles:
       # @start locale config
       en: &EN Applications
-      ko: &KO 활용분야
+      # ko: &KO 활용분야
       # @end locale config
     url: /applications/index.html
 
