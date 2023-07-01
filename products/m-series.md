@@ -20,12 +20,12 @@ article_header:
 
 .item1 {
   flex-basis: 50%;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .item2 {
   flex-basis: 50%;
-  margin-top: 50px;
+  margin-top: 30px;
   padding-left: 150px;
 }
 
@@ -35,10 +35,9 @@ article_header:
   }
 </style>
 
-<br>
-[국방](#){:.button.button--secondary.button--rounded.button--lg}
+<a href="/products/" style="color:black"><< back to products</a>
 
-# M 시리즈
+# M 시리즈 &emsp; [국방](#){:.button.button--secondary.button--rounded.button--lg}
 
 <div class="container">
 <div class="item1">

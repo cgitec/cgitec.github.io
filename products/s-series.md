@@ -20,12 +20,12 @@ article_header:
 
 .item1 {
   flex-basis: 50%;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .item2 {
   flex-basis: 50%;
-  margin-top: 50px;
+  margin-top: 30px;
   padding-left: 150px;
 }
 
@@ -35,11 +35,9 @@ article_header:
   }
 </style>
 
-<br>
-[원자력](#){:.button.button--secondary.button--rounded.button--lg}
-[방사선 폐기물](#){:.button.button--secondary.button--rounded.button--lg}
+<a href="/products/" style="color:black"><< back to products</a>
 
-# S 시리즈
+# S 시리즈 &emsp; [원자력](#){:.button.button--secondary.button--rounded.button--lg} [방사선 폐기물](#){:.button.button--secondary.button--rounded.button--lg}
 
 <div class="container">
 <div class="item1">

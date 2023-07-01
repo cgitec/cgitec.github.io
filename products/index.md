@@ -13,7 +13,9 @@ article_header:
 
 <br>
 
-## H Series
+## Products &emsp; <a class="button button--primary button--rounded button--lg" href="h-series.html">H Series</a> <a class="button button--primary button--rounded button--lg" href="p-series.html">P Series</a> <a class="button button--primary button--rounded button--lg" href="a-series.html">A Series</a> <a class="button button--primary button--rounded button--lg" href="m-series.html">M Series</a> <a class="button button--primary button--rounded button--lg" href="s-series.html">S Series</a>
+
+### H Series
 
 <img style="float: right;" src="../../assets/img/H_cover.png">
 - 실시간 방사선원 ID 및 이미징
@@ -23,11 +25,11 @@ article_header:
 - 원자력 발전, 화생방 분야 최고의 포터블 검출기
   <br>
   <br>
-  <a class="button button--primary button--rounded button--xl" href="h-series.html">Learn more</a>
+  <a class="button button--secondary button--rounded button--lg" href="h-series.html">Learn more</a>
   <br>
   <br>
 
-## P Series
+### P Series
 
 <img style="float: right;" src="../../assets/img/P_cover.png">
 - 실시간 방사선원 ID 및 이미징
@@ -39,11 +41,11 @@ article_header:
 - 긴급대처상황, 사고상황, 또는 탈출상황에서 효과적
   <br>
   <br>
-  <a class="button button--primary button--rounded button--xl" href="p-series.html">Learn more</a>
+  <a class="button button--secondary button--rounded button--lg" href="p-series.html">Learn more</a>
   <br>
   <br>
 
-## A Series
+### A Series
 
 <img style="float: right;" src="../../assets/img/A_cover.png">
 - 이동성이 용이 콤팩트하고 튼튼한 구조
@@ -55,11 +57,11 @@ article_header:
 - 국경/국방 등에서 경비용으로 활용
   <br>
   <br>
-  <a class="button button--primary button--rounded button--xl" href="h-series.html">Learn more</a>
+  <a class="button button--secondary button--rounded button--lg" href="h-series.html">Learn more</a>
   <br>
   <br>
 
-## M Series
+### M Series
 
 <img style="float: right;" src="../../assets/img/M_cover.png">
 - Mass-to-Volume 이 가장 극대화된 모델
@@ -69,11 +71,11 @@ article_header:
 - 다양한 어플리케이션 활용에 용이 (OEM integration)
   <br>
   <br>
-  <a class="button button--primary button--rounded button--xl" href="m-series.html">Learn more</a>
+  <a class="button button--secondary button--rounded button--lg" href="m-series.html">Learn more</a>
   <br>
   <br>
 
-## S Series
+### S Series
 
 <img style="float: right;" src="../../assets/img/S_cover.png">
 - 실용적인 고성능 감마선 스펙트로미터
@@ -84,6 +86,6 @@ article_header:
 - 원자력발전소 계획예방정비시 방사선 상시 모니터링
   <br>
   <br>
-  <a class="button button--primary button--rounded button--xl" href="s-series.html">Learn more</a>
+  <a class="button button--secondary button--rounded button--lg" href="s-series.html">Learn more</a>
   <br>
   <br>
