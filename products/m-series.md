@@ -37,7 +37,7 @@ article_header:
 
 <a href="/products/" style="color:black"><< back to products</a>
 
-# M 시리즈 &emsp; [국방](#){:.button.button--secondary.button--rounded.button--lg}
+# M 시리즈 &emsp; [국방](/applications/military.html){:.button.button--secondary.button--rounded.button--lg}
 
 <div class="container">
 <div class="item1">
@@ -63,7 +63,7 @@ article_header:
 
 ### Spec Sheet
 
-[M400 Series](#){:.button.button--primary.button--rounded.button--lg}
+[M400 Series](https://h3dgamma.com/M400Specs.pdf?){:.button.button--primary.button--rounded.button--lg}
 
 <br>
 <p align="center" width="100%">

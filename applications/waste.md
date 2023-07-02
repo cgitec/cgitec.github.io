@@ -33,7 +33,8 @@ article_header:
     flex-direction: column;
   }
 </style>
-<br>
+
+<a href="/applications/" style="color:black"><< back to applications</a>
 
 # 방사선 폐기물
 
@@ -118,8 +119,7 @@ article_header:
     <div class="item__content">
     <div class="item__description">
       <p>- 파이프 라인에 있는 방사선원들의 핵종을 분석 <br>
-- 실시간으로 방사선원의 종류와 그 비율을 추적 <br>
-- 기존 방사선원 추적에 사용되던 불편한 작업을 손쉽게 실시간으로 추적할 수 있게 됨.  </p>
+- 실시간으로 방사선원의 종류와 그 비율을 추적 <br></p>
     </div>
   </div>
   </div>

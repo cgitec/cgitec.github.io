@@ -37,7 +37,7 @@ article_header:
 
 <a href="/products/" style="color:black"><< back to products</a>
 
-# P 시리즈 &emsp; [원자력](#){:.button.button--secondary.button--rounded.button--lg} [방사선 폐기물](#){:.button.button--secondary.button--rounded.button--lg}
+# P 시리즈 &emsp; [원자력](/applications/nuclear.html){:.button.button--secondary.button--rounded.button--lg} [방사선 폐기물](/applications/waste.html){:.button.button--secondary.button--rounded.button--lg}
 
 <div class="container">
 <div class="item1">
@@ -74,18 +74,18 @@ article_header:
 
 <br>
 
-|                              |              ![](/assets/img/P_cover.png){:width="60%"}               |               ![](/assets/img/P_cover.png){:width="60%"}               |
-| ---------------------------: | :-------------------------------------------------------------------: | :--------------------------------------------------------------------: |
-|                    **Model** |                               **P100**                                |                               **P100S**                                |
-| Resolution (% FWHM @ 662keV) |                                 <1.1                                  |                                  <1.1                                  |
-|     Spectrometer Range (keV) |                              50 to 3000                               |                               50 to 3000                               |
-|          Imaging Range (keV) |                              250 to 3000                              |                                  N/A                                   |
-|      Collimator (" Tungsten) |                                   1                                   |                                   1                                    |
-|             CZT Volume (cm3) |                                  >6                                   |                                  >4.5                                  |
-|                Weight (lbs.) |                                  25                                   |                                   25                                   |
-|          Battery Life (hrs.) |                                   7                                   |                                   7                                    |
-|                    IP Rating |                                 IP65                                  |                                  IP65                                  |
-|      Temperature Rating (°F) |                               -4 to 122                               |                               -4 to 122                                |
-|       Startup Time (minutes) |                                  <2                                   |                                   <2                                   |
-|               User Interface |                                Tabpet                                 |                            Tablet / Webpage                            |
-|                              | [P100 Series](#){:.button.button--primary.button--rounded.button--sm} | [P100S Series](#){:.button.button--primary.button--rounded.button--sm} |
+|                              |                               ![](/assets/img/P_cover.png){:width="60%"}                                |                                ![](/assets/img/P_cover.png){:width="60%"}                                 |
+| ---------------------------: | :-----------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------: |
+|                    **Model** |                                                **P100**                                                 |                                                 **P100S**                                                 |
+| Resolution (% FWHM @ 662keV) |                                                  <1.1                                                   |                                                   <1.1                                                    |
+|     Spectrometer Range (keV) |                                               50 to 3000                                                |                                                50 to 3000                                                 |
+|          Imaging Range (keV) |                                               250 to 3000                                               |                                                    N/A                                                    |
+|      Collimator (" Tungsten) |                                                    1                                                    |                                                     1                                                     |
+|             CZT Volume (cm3) |                                                   >6                                                    |                                                   >4.5                                                    |
+|                Weight (lbs.) |                                                   25                                                    |                                                    25                                                     |
+|          Battery Life (hrs.) |                                                    7                                                    |                                                     7                                                     |
+|                    IP Rating |                                                  IP65                                                   |                                                   IP65                                                    |
+|      Temperature Rating (°F) |                                                -4 to 122                                                |                                                 -4 to 122                                                 |
+|       Startup Time (minutes) |                                                   <2                                                    |                                                    <2                                                     |
+|               User Interface |                                                 Tabpet                                                  |                                             Tablet / Webpage                                              |
+|                              | [P100 Series](https://h3dgamma.com/P100Specs.pdf?){:.button.button--primary.button--rounded.button--sm} | [P100S Series](https://h3dgamma.com/P100SSpecs.pdf?){:.button.button--primary.button--rounded.button--sm} |

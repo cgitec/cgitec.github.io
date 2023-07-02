@@ -17,7 +17,8 @@ article_header:
     flex-direction: column;
   }
 </style>
-<br>
+
+<a href="/applications/" style="color:black"><< back to applications</a>
 
 # 원자력 분야
 
