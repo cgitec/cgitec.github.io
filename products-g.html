@@ -11,11 +11,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
+        /* Page Specific Overrides */
         .check-list-custom li {
             position: relative;
             padding-left: 25px;
             margin-bottom: 10px;
             color: var(--text-secondary);
+            font-size: 0.95rem;
         }
 
         .check-list-custom li::before {
@@ -26,7 +28,7 @@
             left: 0;
             top: 2px;
             color: #f1c40f;
-            /* Yellowish check color from image */
+            /* Yellow check */
         }
 
         .section-header-icon {
@@ -34,6 +36,30 @@
             font-size: 1.5rem;
             margin-right: 10px;
             vertical-align: middle;
+        }
+
+        .product-hero-g {
+            background: url('assets/banner1.jpg') center/cover no-repeat;
+            height: 300px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin-top: var(--nav-height);
+        }
+
+        .product-hero-g::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .product-hero-g .container {
+            position: relative;
+            z-index: 2;
         }
     </style>
 </head>
@@ -118,21 +144,21 @@
         </div>
     </nav>
 
-    <div class="product-detail-hero">
+    <!-- Hero Section -->
+    <div class="product-hero-g">
         <div class="container">
-            <h1 class="text-gradient" style="font-size: 3rem;">GammAware</h1>
-            <p class="hero-desc">3D Radiation Imaging System</p>
+            <h1 style="color: white; font-size: 3rem; font-weight: 700;">GammAware</h1>
         </div>
     </div>
 
     <div class="container section">
 
-        <!-- Top Section: Description & Product Image -->
+        <!-- Intro Section -->
         <div style="display: flex; gap: 4rem; align-items: flex-start; margin-bottom: 4rem; flex-wrap: wrap;">
-            <div style="flex: 3; min-width: 300px;">
-                <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--text-primary);">3D
-                    Radiation Imaging System</h2>
-                <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 2rem;">
+            <div style="flex: 2; min-width: 300px;">
+                <h2 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 1.5rem; color: #333;">3D Radiation
+                    Imaging System</h2>
+                <p style="color: #666; line-height: 1.7; margin-bottom: 2rem;">
                     GammAware 는 SLAM (Simultaneous Localization And Mapping) 기술과 Gamma-ray Imaging 기술을 결합하여 방사선 오염 지역의
                     핫스팟을 스캐닝하여 방사선 오염상태를 3차원으로 맵핑하는 시스템 입니다.
                 </p>
@@ -143,64 +169,61 @@
                     <li>차폐 또는 폐기물 저장소에 대한 정확한 선량평가 용이</li>
                 </ul>
             </div>
-            <div style="flex: 2; min-width: 250px; text-align: center;">
-                <img src="assets/GammAware.png" alt="GammAware Product" style="max-width: 100%; border-radius: 12px;">
+            <div style="flex: 1; min-width: 250px; text-align: center;">
+                <img src="assets/GammAware.png" alt="GammAware System" style="max-width: 100%; width: 250px;">
             </div>
         </div>
 
-        <!-- Middle Section: Held Image & Compat/Capabilities -->
-        <div style="display: flex; gap: 4rem; align-items: flex-start; margin-bottom: 6rem; flex-wrap: wrap;">
+        <!-- Details Section -->
+        <div style="display: flex; gap: 4rem; align-items: flex-start; margin-bottom: 5rem; flex-wrap: wrap;">
             <div style="flex: 1; min-width: 300px;">
-                <img src="assets/GammAwareHeld.jpg" alt="GammAware Usage"
-                    style="width: 100%; border-radius: 16px; box-shadow: var(--card-shadow);">
+                <img src="assets/GammAware_person.jpg" alt="GammAware Usage"
+                    style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
             </div>
-            <div style="flex: 1; min-width: 300px;">
 
+            <div style="flex: 1; min-width: 300px;">
                 <div style="margin-bottom: 2rem;">
-                    <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-primary);">
+                    <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem; color: #333;">
                         <i class="fas fa-sync section-header-icon"></i> Compatibility
                     </h3>
-                    <ul style="color: var(--text-secondary); list-style: disc; padding-left: 20px; line-height: 1.6;">
-                        <li>H Series (ex: H100, H400, H420)</li>
-                        <li>M Series (ex: M100, M400)</li>
+                    <ul style="color: #555; font-size: 0.9rem; list-style: none; padding-left: 20px; line-height: 1.6;">
+                        <li>- H Series (ex: H100, H400, H420)</li>
+                        <li>- M Series (ex: M100, M400)</li>
                     </ul>
                 </div>
 
                 <div>
-                    <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-primary);">
+                    <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem; color: #333;">
                         <i class="fas fa-binoculars section-header-icon"></i> Capabilities
                     </h3>
-                    <ul style="color: var(--text-secondary); list-style: disc; padding-left: 20px; line-height: 1.6;">
-                        <li>Improved source-term maps and dose-rate visualization</li>
-                        <li>Shielding evaluations</li>
-                        <li>Tools for time-motion ALARA dose estimations</li>
-                        <li>Accurate characterization for waste shipments and storage</li>
+                    <ul style="color: #555; font-size: 0.9rem; list-style: none; padding-left: 20px; line-height: 1.6;">
+                        <li>- Improved source-term maps and dose-rate visualization</li>
+                        <li>- Shielding evaluations</li>
+                        <li>- Tools for time-motion ALARA dose estimations</li>
+                        <li>- Accurate characterization for waste shipments and storage</li>
                     </ul>
                 </div>
-
             </div>
         </div>
 
-        <!-- Bottom Section: Video/Tool Info -->
-        <div style="background: #fff; padding: 2rem; border-radius: 16px;">
-            <div style="display: flex; gap: 4rem; flex-wrap: wrap; align-items: center;">
-                <div style="flex: 1; min-width: 300px;">
-                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-primary);">
-                        GammAware 를 이용한 3D Radiation 맵핑도구</h3>
-                    <p style="color: var(--text-secondary);">
-                        Introducing GammAware: H3D's 3D Radiation Mapping and Visualization Tool
-                    </p>
-                </div>
-                <div style="flex: 1.5; min-width: 300px;">
-                    <div
-                        style="position: relative; border-radius: 12px; overflow: hidden; box-shadow: var(--card-shadow);">
-                        <img src="assets/gammAware_movie.png" alt="GammAware Video"
-                            style="width: 100%; display: block;">
-                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                            <i class="fas fa-play-circle"
-                                style="font-size: 4rem; color: rgba(255, 255, 20, 0.8); cursor: pointer;"></i>
-                        </div>
-                    </div>
+        <!-- Video Section -->
+        <div style="display: flex; gap: 4rem; margin-bottom: 5rem; align-items: center; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 300px;">
+                <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; color: #333;">
+                    GammAware 를 이용한 3D Radiation 맵핑도구
+                </h3>
+                <p style="color: #666; font-size: 0.95rem; line-height: 1.6;">
+                    Introducing GammAware: H3D's 3D Radiation Mapping and Visualization Tool
+                </p>
+            </div>
+            <div style="flex: 1; min-width: 300px;">
+                <div
+                    style="position: relative; border-radius: 8px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
+                    <img src="assets/gammAware_movie.png" alt="GammAware Video" style="width: 100%; display: block;">
+                    <a href="#"
+                        style="position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); color: #fff; font-size: 3rem; opacity: 0.8; transition: opacity 0.3s;">
+                        <i class="fas fa-play-circle"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -209,8 +232,27 @@
 
     <footer>
         <div class="container">
-            <div style="text-align: center; color: var(--text-secondary); font-size: 0.9rem;">
-                &copy; 2026 CGITEC. All rights reserved.
+            <div class="footer-content">
+                <div class="footer-col" style="flex: 2;">
+                    <a href="#" class="logo" style="margin-bottom: 1rem; display: inline-block;">
+                        <img src="assets/logo.png" alt="CGITEC"
+                            style="height: 30px; margin-right: 10px; vertical-align: middle;">
+                        CGITEC
+                    </a>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+                        © CGITEC 2021<br>
+                        씨지텍 34187 대전광역시 유성구 계룡로141번길 29-25 229-8, 29-25 (TEL: +82-42-825-1838)<br>
+                        CGITEC, 29-25 Gyeryong-ro 141beon-gil, Yuseong-gu, Daejeon 34187, Korea
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="producs.html">PRODUCTS</a></li>
+                        <li><a href="applications.html">APPLICATIONS</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </footer>

@@ -10,11 +10,115 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Page Specific Overrides */
+        .check-list-custom li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .check-list-custom li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: #f1c40f;
+            /* Yellow check */
+        }
+
+        .section-header-icon {
+            color: #f1c40f;
+            font-size: 1.5rem;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        /* Table Styles */
+        .series-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.8rem;
+            margin-top: 2rem;
+            white-space: nowrap;
+        }
+
+        .series-table th {
+            background: #f1f3f5;
+            padding: 12px 8px;
+            font-weight: 700;
+            color: #2d3436;
+            border-top: 2px solid #ddd;
+            border-bottom: 2px solid #ddd;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .series-table td {
+            padding: 12px 8px;
+            border-bottom: 1px solid #eee;
+            text-align: center;
+            vertical-align: middle;
+            color: #555;
+        }
+
+        .series-table tr:hover {
+            background: #f9f9f9;
+        }
+
+        .model-img {
+            width: 30px;
+            height: auto;
+            vertical-align: middle;
+        }
+
+        .model-name {
+            font-weight: 800;
+            color: #2d3436;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 4px 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            color: #777;
+            font-size: 0.75rem;
+            text-decoration: none;
+        }
+
+        .product-hero-t {
+            background: url('assets/banner1.jpg') center/cover no-repeat;
+            height: 300px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin-top: var(--nav-height);
+        }
+
+        .product-hero-t::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .product-hero-t .container {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
 </head>
 
 <body>
 
-    <!-- Navbar -->
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo">
@@ -31,38 +135,31 @@
                     <a href="products.html" class="active">Products <i class="fas fa-chevron-down"
                             style="font-size: 0.7em; margin-left: 4px;"></i></a>
                     <div class="dropdown-content">
-                        <a href="products.html#h-series" class="dropdown-item">
-                            <i class="fas fa-video"></i>
+                        <a href="products-h.html" class="dropdown-item"><i class="fas fa-video"></i>
                             <div class="dropdown-text"><span class="dropdown-title">H-Series</span><span
                                     class="dropdown-desc">Imaging Spectrometer</span></div>
                         </a>
-                        <a href="products.html#m-series" class="dropdown-item">
-                            <i class="fas fa-video"></i>
+                        <a href="products-m.html" class="dropdown-item"><i class="fas fa-video"></i>
                             <div class="dropdown-text"><span class="dropdown-title">M-Series</span><span
                                     class="dropdown-desc">Customizable Spectrometer</span></div>
                         </a>
-                        <a href="products-a.html" class="dropdown-item">
-                            <i class="fas fa-radiation"></i>
+                        <a href="products-a.html" class="dropdown-item"><i class="fas fa-radiation"></i>
                             <div class="dropdown-text"><span class="dropdown-title">A-Series</span><span
                                     class="dropdown-desc">High-Performance RIID</span></div>
                         </a>
-                        <a href="products-s.html" class="dropdown-item">
-                            <i class="fas fa-radiation"></i>
+                        <a href="products-s.html" class="dropdown-item"><i class="fas fa-radiation"></i>
                             <div class="dropdown-text"><span class="dropdown-title">S-Series</span><span
                                     class="dropdown-desc">Industrial Spectrometer</span></div>
                         </a>
-                        <a href="products-p.html" class="dropdown-item">
-                            <i class="fas fa-video"></i>
+                        <a href="products-p.html" class="dropdown-item"><i class="fas fa-video"></i>
                             <div class="dropdown-text"><span class="dropdown-title">P-Series</span><span
                                     class="dropdown-desc">Collimated Imaging</span></div>
                         </a>
-                        <a href="products-t.html" class="dropdown-item">
-                            <i class="fas fa-video"></i>
+                        <a href="products-t.html" class="dropdown-item"><i class="fas fa-video"></i>
                             <div class="dropdown-text"><span class="dropdown-title">T-Series</span><span
                                     class="dropdown-desc">Ruggedized Module</span></div>
                         </a>
-                        <a href="products.html#gammaware" class="dropdown-item">
-                            <i class="fas fa-video"></i>
+                        <a href="products-g.html" class="dropdown-item"><i class="fas fa-video"></i>
                             <div class="dropdown-text"><span class="dropdown-title">GammAware</span><span
                                     class="dropdown-desc">3D Imaging System</span></div>
                         </a>
@@ -72,35 +169,25 @@
                     <a href="applications.html">Applications <i class="fas fa-chevron-down"
                             style="font-size: 0.7em; margin-left: 4px;"></i></a>
                     <div class="dropdown-content">
-                        <a href="applications-nuclear.html" class="dropdown-item">
-                            <i class="fas fa-shield-alt"></i>
+                        <a href="applications-nuclear.html" class="dropdown-item"><i class="fas fa-shield-alt"></i>
                             <div class="dropdown-text"><span class="dropdown-title">원자력발전</span><span
                                     class="dropdown-desc">Nuclear Power</span></div>
                         </a>
-                        <a href="applications-waste.html" class="dropdown-item">
-                            <i class="fas fa-shield-alt"></i>
+                        <a href="applications-waste.html" class="dropdown-item"><i class="fas fa-trash-alt"></i>
                             <div class="dropdown-text"><span class="dropdown-title">방사선 폐기물</span><span
                                     class="dropdown-desc">Radioactive Waste</span></div>
                         </a>
-                        <a href="applications-cbrne.html" class="dropdown-item">
-                            <i class="fas fa-shield-alt"></i>
+                        <a href="applications-cbrne.html" class="dropdown-item"><i class="fas fa-biohazard"></i>
                             <div class="dropdown-text"><span class="dropdown-title">화생방분야</span><span
                                     class="dropdown-desc">CBRNE / Security</span></div>
                         </a>
-                        <a href="applications-medical.html" class="dropdown-item">
-                            <i class="fas fa-shield-alt"></i>
+                        <a href="applications-medical.html" class="dropdown-item"><i class="fas fa-heartbeat"></i>
                             <div class="dropdown-text"><span class="dropdown-title">의료분야</span><span
                                     class="dropdown-desc">Medical</span></div>
                         </a>
-                        <a href="applications-defense.html" class="dropdown-item">
-                            <i class="fas fa-shield-alt"></i>
+                        <a href="applications-defense.html" class="dropdown-item"><i class="fas fa-fighter-jet"></i>
                             <div class="dropdown-text"><span class="dropdown-title">국방 분야</span><span
                                     class="dropdown-desc">Defense</span></div>
-                        </a>
-                        <a href="applications-cbrne.html" class="dropdown-item">
-                            <i class="fas fa-shield-alt"></i>
-                            <div class="dropdown-text"><span class="dropdown-title">핵안전분야</span><span
-                                    class="dropdown-desc">Nuclear Safety</span></div>
                         </a>
                     </div>
                 </li>
@@ -110,102 +197,124 @@
         </div>
     </nav>
 
-    <div class="product-detail-hero">
+    <!-- Hero Section -->
+    <div class="product-hero-t">
         <div class="container">
-            <h1 class="text-gradient" style="font-size: 3rem;">T-Series</h1>
-            <p class="hero-desc">Ruggedized CZT Module</p>
-            <img src="assets/T410.jpg" alt="T-Series Product"
-                style="max-width: 600px; width: 100%; margin-top: 2rem; border-radius: 12px; object-fit: contain;">
+            <h1 style="color: white; font-size: 3rem; font-weight: 700;">T-Series</h1>
         </div>
     </div>
 
     <div class="container section">
-        <div class="app-content">
-            <div class="app-text">
-                <h2 class="product-title">Rugged & Reliable</h2>
-                <div class="product-desc">
-                    <p>T시리즈는 극한 환경에서도 안정적인 성능을 발휘하도록 설계된 강화된 CZT 모듈입니다. 충격, 진동, 고온/저온 환경에서의 사용에 최적화되어 있습니다.</p>
+
+        <!-- Intro Section -->
+        <div style="display: flex; gap: 4rem; align-items: flex-start; margin-bottom: 4rem; flex-wrap: wrap;">
+            <div style="flex: 2; min-width: 300px;">
+                <h2 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 1.5rem; color: #333;">Ruggedized
+                    Integrable Detector Module</h2>
+                <p style="color: #666; line-height: 1.7; margin-bottom: 2rem;">
+                    극한 환경속에서 효율적으로 방사선원의 식별 및 위치를 찾아낼 수 있는 감마선 보안검색 솔루션. 해당 솔루션은 자동차, 무인장갑차 등에 장착되어 극한의 환경속에서 방사선원을
+                    효율적으로 탐색하고 수색하는 역할을 수행.
+                </p>
+                <ul class="check-list-custom">
+                    <li>컴팩트하고 튼튼함</li>
+                    <li>짧은 시간에 기동이 가능</li>
+                    <li>극한의 날씨와 악조건의 환경속에서 사용가능</li>
+                </ul>
+            </div>
+            <div style="flex: 1; min-width: 250px; text-align: center;">
+                <img src="assets/T410.jpg" alt="T-Series Device" style="max-width: 100%; width: 250px;">
+            </div>
+        </div>
+
+        <div style="margin-bottom: 3rem; display: flex; gap: 2rem; flex-wrap: wrap;">
+            <div style="flex:1;">
+                <img src="assets/T_series_on_car.jpg" alt="T-Series Integration"
+                    style="width: 100%; border-radius: 8px;">
+            </div>
+            <div style="flex: 1; min-width: 300px;">
+                <div style="margin-bottom: 1.5rem;">
+                    <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; color: #333;">
+                        <i class="fas fa-sync section-header-icon"></i> Features
+                    </h3>
+                    <ul style="color: #555; font-size: 0.9rem; list-style: none; padding-left: 20px;">
+                        <li>- Compact and light-weight size</li>
+                        <li>- Fast startup</li>
+                        <li>- Weather-resistant and durable design</li>
+                    </ul>
                 </div>
 
-                <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Key Features</h3>
-                <ul class="product-check-list">
-                    <li><i class="fas fa-check-circle"></i> IP 등급의 방수/방진 설계</li>
-                    <li><i class="fas fa-check-circle"></i> MIL-SPEC 수준의 내구성</li>
-                    <li><i class="fas fa-check-circle"></i> 넓은 동작 온도 범위</li>
-                    <li><i class="fas fa-check-circle"></i> 차량 및 중장비 탑재 가능</li>
-                    <li><i class="fas fa-check-circle"></i> 장시간 연속 운용 지원</li>
-                </ul>
-
-                <div class="feature-box">
-                    <h4><i class="fas fa-layer-group"></i> Applications</h4>
-                    <ul>
-                        <li>이동형 방사선 탐지 차량 (Mobile Lab)</li>
-                        <li>군용 정찰 로봇 및 차량</li>
-                        <li>실외 고정형 모니터링 포스트</li>
-                        <li>재난 현장 대응</li>
+                <div>
+                    <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; color: #333;">
+                        <i class="fas fa-binoculars section-header-icon"></i> Integration With
+                    </h3>
+                    <ul style="color: #555; font-size: 0.9rem; list-style: none; padding-left: 20px;">
+                        <li>- Vehicles</li>
+                        <li>- Robots</li>
+                        <li>- Monitoring stations</li>
+                        <li>- Other sensor suites</li>
                     </ul>
                 </div>
             </div>
-            <div class="app-image">
-                <img src="assets/T_car.jpg" alt="T-Series on Car"
-                    style="width: 100%; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
-                <div style="display:flex; gap:10px; margin-top:20px;">
-                    <img src="assets/T_tablete.jpg" alt="T-Series Tablet"
-                        style="flex:1; width:50%; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
-                    <img src="assets/T_series_truck.jpg" alt="T-Series Truck"
-                        style="flex:1; width:50%; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
-                </div>
+        </div>
+
+        <!-- Event Case Section -->
+        <div style="display: flex; gap: 2rem; margin-bottom: 5rem; align-items: flex-start; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 300px;">
+                <h3 style="font-size: 1.4rem; font-weight: 700; color: var(--accent-color); margin-bottom: 1rem;">연례
+                    DTRA 화학생물작전분석(CBOA) 행사</h3>
+                <p style="color: #666; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;">
+                    T 시리즈 강화형 감마선 이미징 장치를 RZR 사륜오토바이에 장착하고 미국 특수부대원이 이를 조종하여 알 수 없는 환경에서 방사선원을 찾고, 위치를 파악하고, 식별하는 임무를
+                    수행하였습니다.
+                </p>
+                <p style="color: #666; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;">
+                    행사 중 훈련원들은 T410P를 이용하여 터널 입구 바깥의 얇은 플라스틱 관 조각 속에 숨겨진 강력한 세슘-137 선원을 발견하였습니다.
+                </p>
+                <p style="color: #666; font-size: 0.95rem; line-height: 1.6;">
+                    이는 삼차원 방사선 이미징 기술이 현장에서 안전하고 빠르게 원거리에서 결과를 제공할 수 있는 한 가지 사례입니다.
+                </p>
+            </div>
+            <div style="flex: 1; min-width: 300px; display: grid; grid-template-columns: 1.5fr 1fr; gap: 10px;">
+                <img src="assets/cbrn.jpg" alt="CBOA Event"
+                    style="width:100%; height: auto; border-radius: 6px; grid-row: 1/3;">
+                <img src="assets/T_screen_1.png" alt="Screen 1" style="width:100%; border-radius: 6px;">
+                <img src="assets/T_screen_2.png" alt="Screen 2" style="width:100%; border-radius: 6px;">
+                <img src="assets/T1.PNG" alt="Spectrum"
+                    style="width:100%; border-radius: 6px; grid-column: 2; margin-top: auto;">
             </div>
         </div>
 
-        <div class="features-grid" style="grid-template-columns: 1fr 1fr; margin-top: 4rem;">
-            <div class="glass-card feature-box">
-                <h4><i class="fas fa-sync-alt"></i> Features</h4>
-                <ul>
-                    <li>Compact and light-weight size</li>
-                    <li>Fast startup</li>
-                    <li>Weather-resistant and durable design</li>
-                </ul>
-            </div>
-            <div class="glass-card feature-box">
-                <h4><i class="fas fa-puzzle-piece"></i> Integration With</h4>
-                <ul>
-                    <li>Vehicles</li>
-                    <li>Robots</li>
-                    <li>Monitoring stations</li>
-                    <li>Other sensor suites</li>
-                </ul>
-            </div>
-        </div>
 
-        <div class="spec-table-container">
-            <table class="spec-table">
+        <!-- Specs Table -->
+        <div style="overflow-x: auto;">
+            <table class="series-table">
                 <thead>
                     <tr>
+                        <th style="width:60px;"></th>
                         <th>Model</th>
                         <th>Resolution<br>(@662 keV)</th>
                         <th>Spectral<br>Range (keV)</th>
                         <th>Imaging<br>Range (keV)</th>
-                        <th>Coll.<br>(W")</th>
+                        <th>Coll.<br>(W*)</th>
                         <th>CZT Vol.<br>(cm3)</th>
                         <th>Weight<br>(lbs.)</th>
                         <th>Battery<br>(hrs.)</th>
                         <th>IP<br>Rating</th>
                         <th>Temp.<br>(°F)</th>
-                        <th>Startup<br>Time (min)</th>
+                        <th>Startup<br>Time (분)</th>
                         <th>User<br>Interface</th>
                         <th>Spec.<br>Sheet</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td style="font-weight: bold; color: var(--accent-color);">T410</td>
+                        <td><img src="assets/t400_small.png" class="model-img"></td>
+                        <td class="model-name">T410</td>
                         <td>
                             < 1.1</td>
                         <td>50 to 3000</td>
                         <td>50 to 3000</td>
                         <td>N/A</td>
-                        <td>> 19</td>
+                        <td>>19</td>
                         <td>8.7</td>
                         <td>N/A</td>
                         <td>IP67</td>
@@ -213,16 +322,17 @@
                         <td>
                             < 1.5</td>
                         <td>Webpage/<br>API</td>
-                        <td><a href="#" class="download-link">[다운로드]</a></td>
+                        <td><a href="#" class="download-btn">[다운로드]</a></td>
                     </tr>
                     <tr>
-                        <td style="font-weight: bold; color: var(--accent-color);">T410+</td>
+                        <td><img src="assets/t400_small.png" class="model-img"></td>
+                        <td class="model-name">T410+</td>
                         <td>
                             < 0.8</td>
                         <td>50 to 3000</td>
                         <td>50 to 3000</td>
                         <td>N/A</td>
-                        <td>> 19</td>
+                        <td>>19</td>
                         <td>8.7</td>
                         <td>N/A</td>
                         <td>IP67</td>
@@ -230,16 +340,17 @@
                         <td>
                             < 1.5</td>
                         <td>Webpage/<br>API</td>
-                        <td><a href="#" class="download-link">[다운로드]</a></td>
+                        <td><a href="#" class="download-btn">[다운로드]</a></td>
                     </tr>
                     <tr>
-                        <td style="font-weight: bold; color: var(--accent-color);">T400S</td>
+                        <td><img src="assets/t400_small.png" class="model-img"></td>
+                        <td class="model-name">T400S</td>
                         <td>
                             < 1.1</td>
                         <td>50 to 3000</td>
                         <td>N/A</td>
                         <td>N/A</td>
-                        <td>> 19</td>
+                        <td>>19</td>
                         <td>8.7</td>
                         <td>N/A</td>
                         <td>IP67</td>
@@ -247,7 +358,97 @@
                         <td>
                             < 1.5</td>
                         <td>Webpage/<br>API</td>
-                        <td><a href="#" class="download-link">[다운로드]</a></td>
+                        <td><a href="#" class="download-btn">[다운로드]</a></td>
+                    </tr>
+                    <tr>
+                        <td><img src="assets/t400_small.png" class="model-img"></td>
+                        <td class="model-name">T400S+</td>
+                        <td>
+                            < 0.8</td>
+                        <td>50 to 3000</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                        <td>>19</td>
+                        <td>8.7</td>
+                        <td>N/A</td>
+                        <td>IP67</td>
+                        <td>-40 to 122</td>
+                        <td>
+                            < 1.5</td>
+                        <td>Webpage/<br>API</td>
+                        <td><a href="#" class="download-btn">[다운로드]</a></td>
+                    </tr>
+                    <tr>
+                        <td><img src="assets/t400_small.png" class="model-img"></td>
+                        <td class="model-name">T410P</td>
+                        <td>
+                            < 1.1</td>
+                        <td>50 to 3000</td>
+                        <td>50 to 3000</td>
+                        <td>3/16</td>
+                        <td>>19</td>
+                        <td>10.9</td>
+                        <td>N/A</td>
+                        <td>IP67</td>
+                        <td>-40 to 122</td>
+                        <td>
+                            < 1.5</td>
+                        <td>Webpage/<br>API</td>
+                        <td><a href="#" class="download-btn">[다운로드]</a></td>
+                    </tr>
+                    <tr>
+                        <td><img src="assets/t400_small.png" class="model-img"></td>
+                        <td class="model-name">T410P+</td>
+                        <td>
+                            < 0.8</td>
+                        <td>50 to 3000</td>
+                        <td>50 to 3000</td>
+                        <td>3/16</td>
+                        <td>>19</td>
+                        <td>10.9</td>
+                        <td>N/A</td>
+                        <td>IP67</td>
+                        <td>-40 to 122</td>
+                        <td>
+                            < 1.5</td>
+                        <td>Webpage/<br>API</td>
+                        <td><a href="#" class="download-btn">[다운로드]</a></td>
+                    </tr>
+                    <tr>
+                        <td><img src="assets/t400_small.png" class="model-img"></td>
+                        <td class="model-name">T410SP</td>
+                        <td>
+                            < 1.1</td>
+                        <td>50 to 3000</td>
+                        <td>N/A</td>
+                        <td>3/16</td>
+                        <td>>19</td>
+                        <td>10.9</td>
+                        <td>N/A</td>
+                        <td>IP67</td>
+                        <td>-40 to 122</td>
+                        <td>
+                            < 1.5</td>
+                        <td>Webpage/<br>API</td>
+                        <td><a href="#" class="download-btn">[다운로드]</a></td>
+                    </tr>
+                    <tr>
+                        <td><img src="assets/t400_small.png" class="model-img"></td>
+                        <td class="model-name">T410SP+</td>
+                        <td>
+                            < 0.8</td>
+                        <td>50 to 3000</td>
+                        <td>N/A</td>
+                        <td>3/16</td>
+                        <td>>19</td>
+                        <td>10.9</td>
+                        <td>N/A</td>
+                        <td>IP67</td>
+                        <td>-40 to 122</td>
+                        <td>
+                            < 1.5</td>
+                        <td>Webpage/<br>API</td>
+                        <td><a href="#" class="download-btn">[다운로드]</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -257,8 +458,27 @@
 
     <footer>
         <div class="container">
-            <div style="text-align: center; color: var(--text-secondary); font-size: 0.9rem;">
-                &copy; 2026 CGITEC. All rights reserved.
+            <div class="footer-content">
+                <div class="footer-col" style="flex: 2;">
+                    <a href="#" class="logo" style="margin-bottom: 1rem; display: inline-block;">
+                        <img src="assets/logo.png" alt="CGITEC"
+                            style="height: 30px; margin-right: 10px; vertical-align: middle;">
+                        CGITEC
+                    </a>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+                        © CGITEC 2021<br>
+                        씨지텍 34187 대전광역시 유성구 계룡로141번길 29-25 229-8, 29-25 (TEL: +82-42-825-1838)<br>
+                        CGITEC, 29-25 Gyeryong-ro 141beon-gil, Yuseong-gu, Daejeon 34187, Korea
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="producs.html">PRODUCTS</a></li>
+                        <li><a href="applications.html">APPLICATIONS</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </footer>

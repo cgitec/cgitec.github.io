@@ -10,6 +10,111 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Page Specific Overrides */
+        .check-list-custom li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .check-list-custom li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: #f1c40f;
+            /* Yellow check */
+        }
+
+        .section-header-icon {
+            color: #f1c40f;
+            font-size: 1.5rem;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        /* Table Styles */
+        .series-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.8rem;
+            margin-top: 2rem;
+            white-space: nowrap;
+        }
+
+        .series-table th {
+            background: #f1f3f5;
+            padding: 12px 8px;
+            font-weight: 700;
+            color: #2d3436;
+            border-top: 2px solid #ddd;
+            border-bottom: 2px solid #ddd;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .series-table td {
+            padding: 12px 8px;
+            border-bottom: 1px solid #eee;
+            text-align: center;
+            vertical-align: middle;
+            color: #555;
+        }
+
+        .series-table tr:hover {
+            background: #f9f9f9;
+        }
+
+        .model-img {
+            width: 40px;
+            height: auto;
+            vertical-align: middle;
+        }
+
+        .model-name {
+            font-weight: 800;
+            color: #2d3436;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 4px 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            color: #777;
+            font-size: 0.75rem;
+            text-decoration: none;
+        }
+
+        .product-hero-a {
+            background: url('assets/banner1.jpg') center/cover no-repeat;
+            height: 300px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin-top: var(--nav-height);
+        }
+
+        .product-hero-a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .product-hero-a .container {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
 </head>
 
 <body>
@@ -30,39 +135,31 @@
                     <a href="products.html" class="active">Products <i class="fas fa-chevron-down"
                             style="font-size: 0.7em; margin-left: 4px;"></i></a>
                     <div class="dropdown-content">
-                        <!-- Links updated to separate pages -->
-                        <a href="products.html#h-series" class="dropdown-item">
-                            <i class="fas fa-video"></i>
+                        <a href="products-h.html" class="dropdown-item"><i class="fas fa-video"></i>
                             <div class="dropdown-text"><span class="dropdown-title">H-Series</span><span
                                     class="dropdown-desc">Imaging Spectrometer</span></div>
                         </a>
-                        <a href="products.html#m-series" class="dropdown-item">
-                            <i class="fas fa-video"></i>
+                        <a href="products-m.html" class="dropdown-item"><i class="fas fa-video"></i>
                             <div class="dropdown-text"><span class="dropdown-title">M-Series</span><span
                                     class="dropdown-desc">Customizable Spectrometer</span></div>
                         </a>
-                        <a href="products-a.html" class="dropdown-item">
-                            <i class="fas fa-radiation"></i>
+                        <a href="products-a.html" class="dropdown-item"><i class="fas fa-radiation"></i>
                             <div class="dropdown-text"><span class="dropdown-title">A-Series</span><span
                                     class="dropdown-desc">High-Performance RIID</span></div>
                         </a>
-                        <a href="products-s.html" class="dropdown-item">
-                            <i class="fas fa-radiation"></i>
+                        <a href="products-s.html" class="dropdown-item"><i class="fas fa-radiation"></i>
                             <div class="dropdown-text"><span class="dropdown-title">S-Series</span><span
                                     class="dropdown-desc">Industrial Spectrometer</span></div>
                         </a>
-                        <a href="products-p.html" class="dropdown-item">
-                            <i class="fas fa-video"></i>
+                        <a href="products-p.html" class="dropdown-item"><i class="fas fa-video"></i>
                             <div class="dropdown-text"><span class="dropdown-title">P-Series</span><span
                                     class="dropdown-desc">Collimated Imaging</span></div>
                         </a>
-                        <a href="products-t.html" class="dropdown-item">
-                            <i class="fas fa-video"></i>
+                        <a href="products-t.html" class="dropdown-item"><i class="fas fa-video"></i>
                             <div class="dropdown-text"><span class="dropdown-title">T-Series</span><span
                                     class="dropdown-desc">Ruggedized Module</span></div>
                         </a>
-                        <a href="products.html#gammaware" class="dropdown-item">
-                            <i class="fas fa-video"></i>
+                        <a href="products-g.html" class="dropdown-item"><i class="fas fa-video"></i>
                             <div class="dropdown-text"><span class="dropdown-title">GammAware</span><span
                                     class="dropdown-desc">3D Imaging System</span></div>
                         </a>
@@ -72,35 +169,25 @@
                     <a href="applications.html">Applications <i class="fas fa-chevron-down"
                             style="font-size: 0.7em; margin-left: 4px;"></i></a>
                     <div class="dropdown-content">
-                        <a href="applications-nuclear.html" class="dropdown-item">
-                            <i class="fas fa-shield-alt"></i>
+                        <a href="applications-nuclear.html" class="dropdown-item"><i class="fas fa-shield-alt"></i>
                             <div class="dropdown-text"><span class="dropdown-title">원자력발전</span><span
                                     class="dropdown-desc">Nuclear Power</span></div>
                         </a>
-                        <a href="applications-waste.html" class="dropdown-item">
-                            <i class="fas fa-shield-alt"></i>
+                        <a href="applications-waste.html" class="dropdown-item"><i class="fas fa-trash-alt"></i>
                             <div class="dropdown-text"><span class="dropdown-title">방사선 폐기물</span><span
                                     class="dropdown-desc">Radioactive Waste</span></div>
                         </a>
-                        <a href="applications-cbrne.html" class="dropdown-item">
-                            <i class="fas fa-shield-alt"></i>
+                        <a href="applications-cbrne.html" class="dropdown-item"><i class="fas fa-biohazard"></i>
                             <div class="dropdown-text"><span class="dropdown-title">화생방분야</span><span
                                     class="dropdown-desc">CBRNE / Security</span></div>
                         </a>
-                        <a href="applications-medical.html" class="dropdown-item">
-                            <i class="fas fa-shield-alt"></i>
+                        <a href="applications-medical.html" class="dropdown-item"><i class="fas fa-heartbeat"></i>
                             <div class="dropdown-text"><span class="dropdown-title">의료분야</span><span
                                     class="dropdown-desc">Medical</span></div>
                         </a>
-                        <a href="applications-defense.html" class="dropdown-item">
-                            <i class="fas fa-shield-alt"></i>
+                        <a href="applications-defense.html" class="dropdown-item"><i class="fas fa-fighter-jet"></i>
                             <div class="dropdown-text"><span class="dropdown-title">국방 분야</span><span
                                     class="dropdown-desc">Defense</span></div>
-                        </a>
-                        <a href="applications-cbrne.html" class="dropdown-item">
-                            <i class="fas fa-shield-alt"></i>
-                            <div class="dropdown-text"><span class="dropdown-title">핵안전분야</span><span
-                                    class="dropdown-desc">Nuclear Safety</span></div>
                         </a>
                     </div>
                 </li>
@@ -110,185 +197,202 @@
         </div>
     </nav>
 
-    <div class="product-detail-hero">
+    <!-- Hero Section -->
+    <div class="product-hero-a">
         <div class="container">
-            <h1 class="text-gradient" style="font-size: 3rem;">A-Series</h1>
-            <p style="color: var(--text-secondary); margin-top: 1rem; font-size: 1.2rem;">Handheld Radioisotope
-                Identification Device (RIID)</p>
+            <h1 style="color: white; font-size: 3rem; font-weight: 700;">A-Series</h1>
         </div>
     </div>
 
-    <div class="container" style="padding-bottom: 5rem;">
+    <div class="container section">
 
-        <!-- Top Section: Desc and Image -->
-        <div class="app-content"> <!-- Reusing app-content for layout -->
-            <div class="app-text">
-                <h3 style="color: var(--text-primary); margin-bottom: 1.5rem; line-height: 1.6;">
-                    Handheld Radioisotope Identification Device (RIID)
-                </h3>
-                <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.5rem;">
-                    감마선/중성자 통합 방사선 보안검색 솔루션: H3D® A Series는 무게가 2-3 kg에 불과하여 운반이 용이하고 HPGe급의 에너지분해능을 갖고 있어 감마선원의 종류와
-                    방사능을 정확하게 찾을 수 있습니다. 미국 DOD DTRA 의 재정지원을 받아 개발된 3-D Position Sensing 상온반도체 검출기 시리즈는 최고의 방사선 보안검색
-                    솔루션을 제공합니다. A Series 는 감마선 검출기로 사용될 수 있을 뿐만 아니라 중성자 검출기로도 활용이 가능하여 종합적인 방사선 안전 솔루션을 제공합니다.
+        <!-- Intro Section -->
+        <div style="display: flex; gap: 4rem; align-items: flex-start; margin-bottom: 4rem; flex-wrap: wrap;">
+            <div style="flex: 2; min-width: 300px;">
+                <h2 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 1.5rem; color: #333;">Handheld
+                    Radioisotope Identification Device (RIID)</h2>
+                <p style="color: #666; line-height: 1.7; margin-bottom: 2rem;">
+                    감마선/중성자 통합 방사선 보안검색 솔루션: H3D® A Series는 무게가 2-3 kg에 불과하여 운반이 용이하고 HPGe급의 에너지분해능을 갖고 있어 감마선원의 종류와 방
+                    향를 정확하게 찾을 수 있습니다. 미국 DOD DTRA 의 재정지원을 받아 개발된 3-D Position Sensing 상온반도체 검출기 시리즈는 최고의 방사선 보안검색 솔루션을
+                    제공합니다. A Series 는 감마선 검출기로 사용될 수 있을 뿐만 아니라 중성자 검출기로도 활용이 가능하여 종합적인 방사선 안전 솔루션을 제공합니다.
                 </p>
-                <ul class="product-check-list">
-                    <li><i class="fas fa-check"></i> <span>컴팩트, 튼튼함, 그리고 휴대에 용이</span></li>
-                    <li><i class="fas fa-check"></i> <span>ANSI N42.34 기준을 초과하는 성능</span></li>
-                    <li><i class="fas fa-check"></i> <span>방사선원 측정능력이 2인치 NaI(Tl) 수준</span></li>
-                    <li><i class="fas fa-check"></i> <span>상온에서 HPGe 급의 에너지 분해능</span></li>
+                <ul class="check-list-custom">
+                    <li>컴팩트, 튼튼함, 그리고 휴대에 용이</li>
+                    <li>ANSI N42.34 기준을 초과하는 성능</li>
+                    <li>방사선원 측정능력이 2인치 NaI(TI) 수준</li>
+                    <li>상온에서 HPGe 급의 에너지 분해능</li>
                 </ul>
             </div>
-            <div class="app-image"
-                style="background-image: url('assets/product_a.jpg'); background-size: contain; background-repeat: no-repeat; background-color: transparent; box-shadow: none;">
+            <div style="flex: 1; min-width: 250px; text-align: center;">
+                <img src="assets/A400.png" alt="A-Series Device" style="max-width: 100%; height: 350px;">
             </div>
         </div>
 
-        <!-- Features & Applications Grid -->
-        <div class="features-grid" style="grid-template-columns: 1fr 1fr; margin-top: 4rem;">
-            <div class="glass-card feature-box">
-                <h4><i class="fas fa-sync-alt"></i> Features</h4>
-                <ul>
-                    <li>Compact, rugged, and portable</li>
-                    <li>Tested to pass all ANSI N42.34 requirements</li>
-                    <li>Real-time 360° isotope-specific directionality</li>
-                    <li>Identification times comparable to 2" NaI(Tl)</li>
-                    <li>Near-HPGe energy resolution at room temperature</li>
-                </ul>
+        <!-- Features & Apps Section -->
+        <div style="display: flex; gap: 4rem; align-items: flex-start; margin-bottom: 5rem; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 300px;">
+                <img src="assets/A_series_car_survey.jpg" alt="A-Series Usage"
+                    style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
             </div>
-            <div class="glass-card feature-box">
-                <h4><i class="fas fa-binoculars"></i> Applications</h4>
-                <ul>
-                    <li>Border security</li>
-                    <li>First responders</li>
-                    <li>Defense and homeland security</li>
-                    <li>Environmental radiation measurements</li>
-                    <li>Industrial characterization</li>
-                </ul>
+
+            <div style="flex: 1; min-width: 300px;">
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem; color: #333;">
+                        <i class="fas fa-sync section-header-icon"></i> Features
+                    </h3>
+                    <ul style="color: #555; font-size: 0.9rem; list-style: none; padding-left: 20px; line-height: 1.6;">
+                        <li>- Compact, rugged, and portable</li>
+                        <li>- Tested to pass all ANSI N42.34 requirements</li>
+                        <li>- Real-time 360° isotope-specific directionality</li>
+                        <li>- Identification times comparable to 2" NaI(Tl)</li>
+                        <li>- Near-HPGe energy resolution at room temperature</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem; color: #333;">
+                        <i class="fas fa-binoculars section-header-icon"></i> Applications
+                    </h3>
+                    <ul style="color: #555; font-size: 0.9rem; list-style: none; padding-left: 20px; line-height: 1.6;">
+                        <li>- Border security</li>
+                        <li>- First responders</li>
+                        <li>- Defense and homeland security</li>
+                        <li>- Environmental radiation measurements</li>
+                        <li>- Industrial characterization</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
         <!-- Specs Table -->
-        <div class="spec-table-container">
-            <table class="spec-table">
+        <div style="overflow-x: auto;">
+            <table class="series-table">
                 <thead>
                     <tr>
+                        <th style="width:60px;"></th>
                         <th>Model</th>
                         <th>Resolution<br>(@662 keV)</th>
                         <th>Spectral<br>Range (keV)</th>
                         <th>Imaging<br>Range (keV)</th>
-                        <th>Coll.<br>(W")</th>
+                        <th>Coll.<br>(W*)</th>
                         <th>CZT Vol.<br>(cm3)</th>
                         <th>Weight<br>(lbs.)</th>
                         <th>Battery<br>(hrs.)</th>
                         <th>IP<br>Rating</th>
                         <th>Temp.<br>(°F)</th>
-                        <th>Startup<br>Time (min)</th>
+                        <th>Startup<br>Time (분)</th>
                         <th>User<br>Interface</th>
                         <th>Spec.<br>Sheet</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td style="font-weight: bold; color: var(--accent-color);">A100</td>
+                        <td><img src="assets/A400_small.png" class="model-img"></td>
+                        <td class="model-name">A100</td>
                         <td>
                             < 1.1</td>
                         <td>50 to 3000</td>
                         <td>Localization<br>250 to 3000</td>
                         <td>N/A</td>
-                        <td>> 4.5</td>
+                        <td>>4.5</td>
                         <td>2.5</td>
-                        <td>> 8</td>
+                        <td>>8</td>
                         <td>IP65</td>
                         <td>-4 to 122</td>
                         <td>
                             < 1</td>
                         <td>Embedded<br>Screen</td>
-                        <td><a href="#" class="download-link">[다운로드]</a></td>
+                        <td><a href="#" class="download-btn">[다운로드]</a></td>
                     </tr>
                     <tr>
-                        <td style="font-weight: bold; color: var(--accent-color);">A100+</td>
+                        <td><img src="assets/A400_small.png" class="model-img"></td>
+                        <td class="model-name">A100+</td>
                         <td>
                             < 0.8</td>
                         <td>50 to 3000</td>
                         <td>Localization<br>250 to 3001</td>
                         <td>N/A</td>
-                        <td>> 4.5</td>
+                        <td>>4.5</td>
                         <td>2.5</td>
-                        <td>> 8</td>
+                        <td>>8</td>
                         <td>IP65</td>
                         <td>-4 to 122</td>
                         <td>
                             < 1</td>
                         <td>Embedded<br>Screen</td>
-                        <td><a href="#" class="download-link">[다운로드]</a></td>
+                        <td><a href="#" class="download-btn">[다운로드]</a></td>
                     </tr>
                     <tr>
-                        <td style="font-weight: bold; color: var(--accent-color);">A200</td>
+                        <td><img src="assets/A400_small.png" class="model-img"></td>
+                        <td class="model-name">A200</td>
                         <td>
                             < 1.1</td>
                         <td>50 to 3000</td>
                         <td>Localization<br>250 to 3002</td>
                         <td>N/A</td>
-                        <td>> 9</td>
+                        <td>>9</td>
                         <td>2.6</td>
-                        <td>> 8</td>
+                        <td>>8</td>
                         <td>IP65</td>
                         <td>-4 to 122</td>
                         <td>
                             < 1</td>
                         <td>Embedded<br>Screen</td>
-                        <td><a href="#" class="download-link">[다운로드]</a></td>
+                        <td><a href="#" class="download-btn">[다운로드]</a></td>
                     </tr>
                     <tr>
-                        <td style="font-weight: bold; color: var(--accent-color);">A200+</td>
+                        <td><img src="assets/A400_small.png" class="model-img"></td>
+                        <td class="model-name">A200+</td>
                         <td>
                             < 0.8</td>
                         <td>50 to 3000</td>
                         <td>Localization<br>250 to 3003</td>
                         <td>N/A</td>
-                        <td>> 9</td>
+                        <td>>9</td>
                         <td>2.6</td>
-                        <td>> 8</td>
+                        <td>>8</td>
                         <td>IP65</td>
                         <td>-4 to 122</td>
                         <td>
                             < 1</td>
                         <td>Embedded<br>Screen</td>
-                        <td><a href="#" class="download-link">[다운로드]</a></td>
+                        <td><a href="#" class="download-btn">[다운로드]</a></td>
                     </tr>
                     <tr>
-                        <td style="font-weight: bold; color: var(--accent-color);">A400</td>
+                        <td><img src="assets/A400_small.png" class="model-img"></td>
+                        <td class="model-name">A400</td>
                         <td>
                             < 1.1</td>
                         <td>50 to 3000</td>
                         <td>Localization<br>250 to 3004</td>
                         <td>N/A</td>
-                        <td>> 19</td>
+                        <td>>19</td>
                         <td>2.6</td>
-                        <td>> 8</td>
+                        <td>>8</td>
                         <td>IP65</td>
                         <td>-4 to 122</td>
                         <td>
                             < 1</td>
                         <td>Embedded<br>Screen</td>
-                        <td><a href="#" class="download-link">[다운로드]</a></td>
+                        <td><a href="#" class="download-btn">[다운로드]</a></td>
                     </tr>
                     <tr>
-                        <td style="font-weight: bold; color: var(--accent-color);">A400+</td>
+                        <td><img src="assets/A400_small.png" class="model-img"></td>
+                        <td class="model-name">A400+</td>
                         <td>
                             < 0.8</td>
                         <td>50 to 3000</td>
                         <td>Localization<br>250 to 3005</td>
                         <td>N/A</td>
-                        <td>> 19</td>
+                        <td>>19</td>
                         <td>2.6</td>
-                        <td>> 8</td>
+                        <td>>8</td>
                         <td>IP65</td>
                         <td>-4 to 122</td>
                         <td>
                             < 1</td>
                         <td>Embedded<br>Screen</td>
-                        <td><a href="#" class="download-link">[다운로드]</a></td>
+                        <td><a href="#" class="download-btn">[다운로드]</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -298,8 +402,27 @@
 
     <footer>
         <div class="container">
-            <div style="text-align: center; color: var(--text-secondary); font-size: 0.9rem;">
-                &copy; 2026 CGITEC. All rights reserved.
+            <div class="footer-content">
+                <div class="footer-col" style="flex: 2;">
+                    <a href="#" class="logo" style="margin-bottom: 1rem; display: inline-block;">
+                        <img src="assets/logo.png" alt="CGITEC"
+                            style="height: 30px; margin-right: 10px; vertical-align: middle;">
+                        CGITEC
+                    </a>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+                        © CGITEC 2021<br>
+                        씨지텍 34187 대전광역시 유성구 계룡로141번길 29-25 229-8, 29-25 (TEL: +82-42-825-1838)<br>
+                        CGITEC, 29-25 Gyeryong-ro 141beon-gil, Yuseong-gu, Daejeon 34187, Korea
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="producs.html">PRODUCTS</a></li>
+                        <li><a href="applications.html">APPLICATIONS</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </footer>
