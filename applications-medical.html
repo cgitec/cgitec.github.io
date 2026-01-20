@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Applications - CGITEC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.png" alt="CGITEC Logo"
+                    style="height: 40px; vertical-align: middle; margin-right: 10px;">
+                CGITEC
+            </a>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="products.html">Products <i class="fas fa-chevron-down"
+                            style="font-size: 0.7em; margin-left: 4px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="products-h.html" class="dropdown-item"><i class="fas fa-video"></i>
+                            <div class="dropdown-text"><span class="dropdown-title">H-Series</span><span
+                                    class="dropdown-desc">Imaging Spectrometer</span></div>
+                        </a>
+                        <a href="products-m.html" class="dropdown-item"><i class="fas fa-video"></i>
+                            <div class="dropdown-text"><span class="dropdown-title">M-Series</span><span
+                                    class="dropdown-desc">Customizable Spectrometer</span></div>
+                        </a>
+                        <a href="products-a.html" class="dropdown-item"><i class="fas fa-radiation"></i>
+                            <div class="dropdown-text"><span class="dropdown-title">A-Series</span><span
+                                    class="dropdown-desc">High-Performance RIID</span></div>
+                        </a>
+                        <a href="products-s.html" class="dropdown-item"><i class="fas fa-radiation"></i>
+                            <div class="dropdown-text"><span class="dropdown-title">S-Series</span><span
+                                    class="dropdown-desc">Industrial Spectrometer</span></div>
+                        </a>
+                        <a href="products-p.html" class="dropdown-item"><i class="fas fa-video"></i>
+                            <div class="dropdown-text"><span class="dropdown-title">P-Series</span><span
+                                    class="dropdown-desc">Collimated Imaging</span></div>
+                        </a>
+                        <a href="products-t.html" class="dropdown-item"><i class="fas fa-video"></i>
+                            <div class="dropdown-text"><span class="dropdown-title">T-Series</span><span
+                                    class="dropdown-desc">Ruggedized Module</span></div>
+                        </a>
+                        <a href="products-g.html" class="dropdown-item"><i class="fas fa-video"></i>
+                            <div class="dropdown-text"><span class="dropdown-title">GammAware</span><span
+                                    class="dropdown-desc">3D Imaging System</span></div>
+                        </a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="applications.html" class="active">Applications <i class="fas fa-chevron-down"
+                            style="font-size: 0.7em; margin-left: 4px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="applications-nuclear.html" class="dropdown-item"><i class="fas fa-shield-alt"></i>
+                            <div class="dropdown-text"><span class="dropdown-title">원자력발전</span><span
+                                    class="dropdown-desc">Nuclear Power</span></div>
+                        </a>
+                        <a href="applications-waste.html" class="dropdown-item"><i class="fas fa-trash-alt"></i>
+                            <div class="dropdown-text"><span class="dropdown-title">방사선 폐기물</span><span
+                                    class="dropdown-desc">Radioactive Waste</span></div>
+                        </a>
+                        <a href="applications-cbrne.html" class="dropdown-item"><i class="fas fa-biohazard"></i>
+                            <div class="dropdown-text"><span class="dropdown-title">화생방분야</span><span
+                                    class="dropdown-desc">CBRNE / Security</span></div>
+                        </a>
+                        <a href="applications-medical.html" class="dropdown-item"><i class="fas fa-heartbeat"></i>
+                            <div class="dropdown-text"><span class="dropdown-title">의료분야</span><span
+                                    class="dropdown-desc">Medical</span></div>
+                        </a>
+                        <a href="applications-defense.html" class="dropdown-item"><i class="fas fa-fighter-jet"></i>
+                            <div class="dropdown-text"><span class="dropdown-title">국방 분야</span><span
+                                    class="dropdown-desc">Defense</span></div>
+                        </a>
+                    </div>
+                </li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="product-detail-hero">
+        <div class="container">
+            <h1 class="text-gradient" style="font-size: 3rem;">의료분야</h1>
+            <p class="hero-desc">Medical Applications</p>
+        </div>
+    </div>
+
+    <div class="container section">
+
+        <!-- Item 1 -->
+        <div class="glass-card"
+            style="margin-bottom: 4rem; padding: 0; overflow: hidden; display: flex; flex-direction: row-reverse; flex-wrap: wrap;">
+            <div
+                style="flex: 1; min-width: 300px; background: url('assets/Radiation_detection_on_person.jpg') center/cover no-repeat; min-height: 300px;">
+            </div>
+            <div
+                style="flex: 1; min-width: 300px; padding: 3rem; display: flex; flex-direction: column; justify-content: center;">
+                <h3 style="color: var(--accent-color); margin-bottom: 1.5rem;">실시간 환자 모니터링</h3>
+                <ul class="product-check-list">
+                    <li>의료 방사선을 투약한 환자의 방사선 거동 탐색</li>
+                    <li>투약후 중요한 치료 방사선 세기를 모니터링</li>
+                    <li>치료후 방사선원의 소멸여부 실시간 모니터링</li>
+                    <li style="margin-top: 10px; font-weight: 600; color: var(--text-primary);">사용장비 : H420</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="glass-card" style="padding: 0; overflow: hidden; display: flex; flex-wrap: wrap;">
+            <div
+                style="flex: 1; min-width: 300px; background: url('assets/medical1.png') center/cover no-repeat; min-height: 300px;">
+            </div>
+            <div
+                style="flex: 1; min-width: 300px; padding: 3rem; display: flex; flex-direction: column; justify-content: center;">
+                <h3 style="color: var(--accent-color); margin-bottom: 1.5rem;">M 시리즈 (의료영상용)</h3>
+                <ul class="product-check-list">
+                    <li>커스터마이징을 위한 모듈형 장비</li>
+                    <li>산업계 탑티어 급 대용량 픽셀형 CZT 채용 ( ~19 cm3 이상)</li>
+                    <li>실시간 핵종판별 및 감마선 이미징</li>
+                    <li>의료영상을 위해 H3D가 디자인한 타일형 M시리즈 장비 (왼쪽 그림)</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="container">
+            <div style="text-align: center; color: var(--text-secondary); font-size: 0.9rem;">
+                &copy; 2026 CGITEC. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

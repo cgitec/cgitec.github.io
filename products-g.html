@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GammAware - CGITEC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .check-list-custom li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            color: var(--text-secondary);
+        }
+
+        .check-list-custom li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: #f1c40f;
+            /* Yellowish check color from image */
+        }
+
+        .section-header-icon {
+            color: #f1c40f;
+            font-size: 1.5rem;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.png" alt="CGITEC Logo"
+                    style="height: 40px; vertical-align: middle; margin-right: 10px;">
+                CGITEC
+            </a>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="products.html" class="active">Products <i class="fas fa-chevron-down"
+                            style="font-size: 0.7em; margin-left: 4px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="products-h.html" class="dropdown-item"><i class="fas fa-video"></i>
+                            <div class="dropdown-text"><span class="dropdown-title">H-Series</span><span
+                                    class="dropdown-desc">Imaging Spectrometer</span></div>
+                        </a>
+                        <a href="products-m.html" class="dropdown-item"><i class="fas fa-video"></i>
+                            <div class="dropdown-text"><span class="dropdown-title">M-Series</span><span
+                                    class="dropdown-desc">Customizable Spectrometer</span></div>
+                        </a>
+                        <a href="products-a.html" class="dropdown-item"><i class="fas fa-radiation"></i>
+                            <div class="dropdown-text"><span class="dropdown-title">A-Series</span><span
+                                    class="dropdown-desc">High-Performance RIID</span></div>
+                        </a>
+                        <a href="products-s.html" class="dropdown-item"><i class="fas fa-radiation"></i>
+                            <div class="dropdown-text"><span class="dropdown-title">S-Series</span><span
+                                    class="dropdown-desc">Industrial Spectrometer</span></div>
+                        </a>
+                        <a href="products-p.html" class="dropdown-item"><i class="fas fa-video"></i>
+                            <div class="dropdown-text"><span class="dropdown-title">P-Series</span><span
+                                    class="dropdown-desc">Collimated Imaging</span></div>
+                        </a>
+                        <a href="products-t.html" class="dropdown-item"><i class="fas fa-video"></i>
+                            <div class="dropdown-text"><span class="dropdown-title">T-Series</span><span
+                                    class="dropdown-desc">Ruggedized Module</span></div>
+                        </a>
+                        <a href="products-g.html" class="dropdown-item"><i class="fas fa-video"></i>
+                            <div class="dropdown-text"><span class="dropdown-title">GammAware</span><span
+                                    class="dropdown-desc">3D Imaging System</span></div>
+                        </a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="applications.html">Applications <i class="fas fa-chevron-down"
+                            style="font-size: 0.7em; margin-left: 4px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="applications-nuclear.html" class="dropdown-item"><i class="fas fa-shield-alt"></i>
+                            <div class="dropdown-text"><span class="dropdown-title">원자력발전</span><span
+                                    class="dropdown-desc">Nuclear Power</span></div>
+                        </a>
+                        <a href="applications-waste.html" class="dropdown-item"><i class="fas fa-trash-alt"></i>
+                            <div class="dropdown-text"><span class="dropdown-title">방사선 폐기물</span><span
+                                    class="dropdown-desc">Radioactive Waste</span></div>
+                        </a>
+                        <a href="applications-cbrne.html" class="dropdown-item"><i class="fas fa-biohazard"></i>
+                            <div class="dropdown-text"><span class="dropdown-title">화생방분야</span><span
+                                    class="dropdown-desc">CBRNE / Security</span></div>
+                        </a>
+                        <a href="applications-medical.html" class="dropdown-item"><i class="fas fa-heartbeat"></i>
+                            <div class="dropdown-text"><span class="dropdown-title">의료분야</span><span
+                                    class="dropdown-desc">Medical</span></div>
+                        </a>
+                        <a href="applications-defense.html" class="dropdown-item"><i class="fas fa-fighter-jet"></i>
+                            <div class="dropdown-text"><span class="dropdown-title">국방 분야</span><span
+                                    class="dropdown-desc">Defense</span></div>
+                        </a>
+                    </div>
+                </li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="product-detail-hero">
+        <div class="container">
+            <h1 class="text-gradient" style="font-size: 3rem;">GammAware</h1>
+            <p class="hero-desc">3D Radiation Imaging System</p>
+        </div>
+    </div>
+
+    <div class="container section">
+
+        <!-- Top Section: Description & Product Image -->
+        <div style="display: flex; gap: 4rem; align-items: flex-start; margin-bottom: 4rem; flex-wrap: wrap;">
+            <div style="flex: 3; min-width: 300px;">
+                <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--text-primary);">3D
+                    Radiation Imaging System</h2>
+                <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 2rem;">
+                    GammAware 는 SLAM (Simultaneous Localization And Mapping) 기술과 Gamma-ray Imaging 기술을 결합하여 방사선 오염 지역의
+                    핫스팟을 스캐닝하여 방사선 오염상태를 3차원으로 맵핑하는 시스템 입니다.
+                </p>
+                <ul class="check-list-custom">
+                    <li>기존 H Series 및 M Series 를 결합하여 사용</li>
+                    <li>주위 구조물과 방사선 오염상태를 3차원으로 모델링 및 맵핑</li>
+                    <li>선원항과 선량에 대한 보다 상세한 정보 제공</li>
+                    <li>차폐 또는 폐기물 저장소에 대한 정확한 선량평가 용이</li>
+                </ul>
+            </div>
+            <div style="flex: 2; min-width: 250px; text-align: center;">
+                <img src="assets/GammAware.png" alt="GammAware Product" style="max-width: 100%; border-radius: 12px;">
+            </div>
+        </div>
+
+        <!-- Middle Section: Held Image & Compat/Capabilities -->
+        <div style="display: flex; gap: 4rem; align-items: flex-start; margin-bottom: 6rem; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 300px;">
+                <img src="assets/GammAwareHeld.jpg" alt="GammAware Usage"
+                    style="width: 100%; border-radius: 16px; box-shadow: var(--card-shadow);">
+            </div>
+            <div style="flex: 1; min-width: 300px;">
+
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-primary);">
+                        <i class="fas fa-sync section-header-icon"></i> Compatibility
+                    </h3>
+                    <ul style="color: var(--text-secondary); list-style: disc; padding-left: 20px; line-height: 1.6;">
+                        <li>H Series (ex: H100, H400, H420)</li>
+                        <li>M Series (ex: M100, M400)</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-primary);">
+                        <i class="fas fa-binoculars section-header-icon"></i> Capabilities
+                    </h3>
+                    <ul style="color: var(--text-secondary); list-style: disc; padding-left: 20px; line-height: 1.6;">
+                        <li>Improved source-term maps and dose-rate visualization</li>
+                        <li>Shielding evaluations</li>
+                        <li>Tools for time-motion ALARA dose estimations</li>
+                        <li>Accurate characterization for waste shipments and storage</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Bottom Section: Video/Tool Info -->
+        <div style="background: #fff; padding: 2rem; border-radius: 16px;">
+            <div style="display: flex; gap: 4rem; flex-wrap: wrap; align-items: center;">
+                <div style="flex: 1; min-width: 300px;">
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-primary);">
+                        GammAware 를 이용한 3D Radiation 맵핑도구</h3>
+                    <p style="color: var(--text-secondary);">
+                        Introducing GammAware: H3D's 3D Radiation Mapping and Visualization Tool
+                    </p>
+                </div>
+                <div style="flex: 1.5; min-width: 300px;">
+                    <div
+                        style="position: relative; border-radius: 12px; overflow: hidden; box-shadow: var(--card-shadow);">
+                        <img src="assets/gammAware_movie.png" alt="GammAware Video"
+                            style="width: 100%; display: block;">
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                            <i class="fas fa-play-circle"
+                                style="font-size: 4rem; color: rgba(255, 255, 20, 0.8); cursor: pointer;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="container">
+            <div style="text-align: center; color: var(--text-secondary); font-size: 0.9rem;">
+                &copy; 2026 CGITEC. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
