@@ -27,12 +27,14 @@
         .about-image {
             flex: 1;
             height: 400px;
-            background: #1f2833;
+            background: url('assets/info_banner2.jpg') no-repeat center center;
+            background-size: cover;
             border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--text-secondary);
+            overflow: hidden;
         }
 
         @media(max-width: 768px) {
@@ -93,10 +95,7 @@
                     </p>
                 </div>
                 <div class="about-image">
-                    <i class="fas fa-building fa-3x"></i>
-                    <span style="display: block; width: 100%; text-align: center; margin-top: 20px;">
-                        Headquartered in Daejeon, South Korea
-                    </span>
+                    <!-- Image set in CSS background -->
                 </div>
             </div>
         </section>
