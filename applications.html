@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applications - CGITEC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-header {
+            padding-top: 150px;
+            padding-bottom: 50px;
+            text-align: center;
+        }
+
+        .app-section {
+            padding: 80px 0;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .app-section:last-child {
+            border-bottom: none;
+        }
+
+        .app-content {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .app-content.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .app-image {
+            flex: 1;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 16px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .app-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+        }
+
+        .app-text {
+            flex: 1;
+        }
+
+        .app-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .app-desc {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .app-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(102, 252, 241, 0.1);
+            border-radius: 12px;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+
+            .app-content,
+            .app-content.reverse {
+                flex-direction: column;
+            }
+
+            .app-image {
+                width: 100%;
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.png" alt="CGITEC Logo"
+                    style="height: 40px; vertical-align: middle; margin-right: 10px;">
+                CGITEC
+            </a>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <!-- Update this section with the same new dropdown structure later -->
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+
+                <!-- Products Dropdown -->
+                <li class="dropdown">
+                    <a href="products.html">Products <i class="fas fa-chevron-down"
+                            style="font-size: 0.7em; margin-left: 4px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="products.html#h-series" class="dropdown-item">
+                            <i class="fas fa-video"></i>
+                            <div class="dropdown-text">
+                                <span class="dropdown-title">H-Series</span>
+                                <span class="dropdown-desc">Imaging Spectrometer</span>
+                            </div>
+                        </a>
+                        <a href="products.html#m-series" class="dropdown-item">
+                            <i class="fas fa-video"></i>
+                            <div class="dropdown-text">
+                                <span class="dropdown-title">M-Series</span>
+                                <span class="dropdown-desc">Customizable Spectrometer</span>
+                            </div>
+                        </a>
+                        <a href="products.html#a-series" class="dropdown-item">
+                            <i class="fas fa-radiation"></i>
+                            <div class="dropdown-text">
+                                <span class="dropdown-title">A-Series</span>
+                                <span class="dropdown-desc">High-Performance RIID</span>
+                            </div>
+                        </a>
+                        <a href="products.html#s-series" class="dropdown-item">
+                            <i class="fas fa-radiation"></i>
+                            <div class="dropdown-text">
+                                <span class="dropdown-title">S-Series</span>
+                                <span class="dropdown-desc">Industrial Spectrometer</span>
+                            </div>
+                        </a>
+                        <a href="products.html#p-series" class="dropdown-item">
+                            <i class="fas fa-video"></i>
+                            <div class="dropdown-text">
+                                <span class="dropdown-title">P-Series</span>
+                                <span class="dropdown-desc">Collimated Imaging</span>
+                            </div>
+                        </a>
+                        <a href="products.html#t-series" class="dropdown-item">
+                            <i class="fas fa-video"></i>
+                            <div class="dropdown-text">
+                                <span class="dropdown-title">T-Series</span>
+                                <span class="dropdown-desc">Ruggedized Module</span>
+                            </div>
+                        </a>
+                        <a href="products.html#gammaware" class="dropdown-item">
+                            <i class="fas fa-video"></i>
+                            <div class="dropdown-text">
+                                <span class="dropdown-title">GammAware</span>
+                                <span class="dropdown-desc">3D Imaging System</span>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+
+                <!-- Applications Dropdown -->
+                <li class="dropdown">
+                    <a href="applications.html" class="active">Applications <i class="fas fa-chevron-down"
+                            style="font-size: 0.7em; margin-left: 4px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="applications.html#nuclear" class="dropdown-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <div class="dropdown-text">
+                                <span class="dropdown-title">원자력발전</span>
+                                <span class="dropdown-desc">Nuclear Power</span>
+                            </div>
+                        </a>
+                        <a href="applications.html#waste" class="dropdown-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <div class="dropdown-text">
+                                <span class="dropdown-title">방사선 폐기물</span>
+                                <span class="dropdown-desc">Radioactive Waste</span>
+                            </div>
+                        </a>
+                        <a href="applications.html#cbrne" class="dropdown-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <div class="dropdown-text">
+                                <span class="dropdown-title">화생방분야</span>
+                                <span class="dropdown-desc">CBRNE / Security</span>
+                            </div>
+                        </a>
+                        <a href="applications.html#medical" class="dropdown-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <div class="dropdown-text">
+                                <span class="dropdown-title">의료분야</span>
+                                <span class="dropdown-desc">Medical</span>
+                            </div>
+                        </a>
+                        <a href="applications.html#defense" class="dropdown-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <div class="dropdown-text">
+                                <span class="dropdown-title">국방 분야</span>
+                                <span class="dropdown-desc">Defense</span>
+                            </div>
+                        </a>
+                        <a href="applications.html#safety" class="dropdown-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <div class="dropdown-text">
+                                <span class="dropdown-title">핵안전분야</span>
+                                <span class="dropdown-desc">Nuclear Safety</span>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header class="page-header">
+            <h1 class="text-gradient" style="font-size: 3rem;">Applications</h1>
+            <p style="color: var(--text-secondary); margin-top: 1rem;">Solutions for critical industries and
+                environments.</p>
+        </header>
+
+        <!-- Nuclear Power -->
+        <section id="nuclear" class="app-section">
+            <div class="app-content">
+                <div class="app-image" style="background-image: url('assets/nuclear.jpg');"></div>
+                <div class="app-text">
+                    <div class="app-icon"><i class="fas fa-radiation"></i></div>
+                    <h2 class="app-title">Nuclear Power</h2>
+                    <h3 style="color: var(--accent-color); margin-bottom: 1rem; font-size: 1.2rem;">원자력발전</h3>
+                    <p class="app-desc">
+                        Advanced monitoring solutions for nuclear power plants. Ensuring safety through real-time
+                        visualization and nuclide identification.
+                    </p>
+                    <ul style="color: var(--text-secondary); list-style: disc; padding-left: 20px;">
+                        <li>Reactor monitoring</li>
+                        <li>Leakage detection</li>
+                        <li>Decommissioning support</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Radioactive Waste -->
+        <section id="waste" class="app-section">
+            <div class="app-content reverse">
+                <div class="app-image" style="background-image: url('assets/waste.jpg');"></div>
+                <div class="app-text">
+                    <div class="app-icon"><i class="fas fa-dumpster-fire"></i></div>
+                    <h2 class="app-title">Radioactive Waste</h2>
+                    <h3 style="color: var(--accent-color); margin-bottom: 1rem; font-size: 1.2rem;">방사선 폐기물</h3>
+                    <p class="app-desc">
+                        Precise nuclide analysis and real-time tracking of radiation sources in waste management
+                        facilities.
+                    </p>
+                    <ul style="color: var(--text-secondary); list-style: disc; padding-left: 20px;">
+                        <li>Waste characterization</li>
+                        <li>Nuclide identification</li>
+                        <li>Hotspot localization</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- CBRNE -->
+        <section id="cbrne" class="app-section">
+            <div class="app-content">
+                <div class="app-image" style="background-image: url('assets/cbrn.jpg');"></div>
+                <div class="app-text">
+                    <div class="app-icon"><i class="fas fa-shield-virus"></i></div>
+                    <h2 class="app-title">CBRNE / Security</h2>
+                    <h3 style="color: var(--accent-color); margin-bottom: 1rem; font-size: 1.2rem;">화생방분야</h3>
+                    <p class="app-desc">
+                        Security solutions for venues and public spaces. Rapid detection and identification of
+                        radiological threats for counter-terrorism.
+                    </p>
+                    <ul style="color: var(--text-secondary); list-style: disc; padding-left: 20px;">
+                        <li>Venue security</li>
+                        <li>Border control</li>
+                        <li>Emergency response</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Medical -->
+        <section id="medical" class="app-section">
+            <div class="app-content reverse">
+                <div class="app-image" style="background-image: url('assets/medical.jpg');"></div>
+                <div class="app-text">
+                    <div class="app-icon"><i class="fas fa-heartbeat"></i></div>
+                    <h2 class="app-title">Medical</h2>
+                    <h3 style="color: var(--accent-color); margin-bottom: 1rem; font-size: 1.2rem;">의료분야</h3>
+                    <p class="app-desc">
+                        Medical radiation monitoring and shielding verification. Ensuring patient and staff safety in
+                        hospitals and treatment centers.
+                    </p>
+                    <ul style="color: var(--text-secondary); list-style: disc; padding-left: 20px;">
+                        <li>Shielding integrity checks</li>
+                        <li>Dosimetry</li>
+                        <li>Contamination monitoring</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Defense -->
+        <section id="defense" class="app-section">
+            <div class="app-content">
+                <div class="app-image" style="background-image: url('assets/military.jpg');"></div>
+                <div class="app-text">
+                    <div class="app-icon"><i class="fas fa-fighter-jet"></i></div>
+                    <h2 class="app-title">Defense</h2>
+                    <h3 style="color: var(--accent-color); margin-bottom: 1rem; font-size: 1.2rem;">국방 분야</h3>
+                    <p class="app-desc">
+                        Integration with unmanned vehicles and control of hazardous areas. Ruggedized solutions for
+                        military applications.
+                    </p>
+                    <ul style="color: var(--text-secondary); list-style: disc; padding-left: 20px;">
+                        <li>UGV / UAV integration</li>
+                        <li>Prohibited area monitoring</li>
+                        <li>Tactical radiation reconnaissance</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nuclear Safety -->
+        <section id="safety" class="app-section">
+            <div class="app-content reverse">
+                <div class="app-image" style="background-image: url('assets/nuclear2.jpg');"></div>
+                <div class="app-text">
+                    <div class="app-icon"><i class="fas fa-hard-hat"></i></div>
+                    <h2 class="app-title">Nuclear Safety</h2>
+                    <h3 style="color: var(--accent-color); margin-bottom: 1rem; font-size: 1.2rem;">핵안전분야</h3>
+                    <p class="app-desc">
+                        Comprehensive safety monitoring and regulation compliance tools.
+                    </p>
+                    <ul style="color: var(--text-secondary); list-style: disc; padding-left: 20px;">
+                        <li>Regulatory compliance</li>
+                        <li>Environmental monitoring</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <div class="container">
+            <div style="text-align: center; color: var(--text-secondary); font-size: 0.9rem;">
+                &copy; 2026 CGITEC. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
