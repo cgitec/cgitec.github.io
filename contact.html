@@ -11,35 +11,119 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        .page-header {
-            padding-top: 150px;
-            padding-bottom: 50px;
-            text-align: center;
+        /* Contact Page Specific Styles */
+        .contact-hero-section {
+            background-color: #1a1a1a;
+            color: #fff;
+            padding-top: var(--nav-height);
+            /* Nav height offset */
+            min-height: 400px;
+            display: flex;
+            align-items: center;
         }
 
-        .form-group {
+        .contact-hero-container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .contact-hero-text {
+            flex: 1;
+            padding: 4rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .contact-hero-text h1 {
+            font-size: 3rem;
+            font-weight: 700;
             margin-bottom: 1.5rem;
         }
 
-        .form-group label {
+        .contact-hero-text p {
+            color: #ccc;
+            line-height: 1.6;
+            max-width: 500px;
+            font-size: 1.1rem;
+        }
+
+        .contact-hero-image {
+            flex: 1;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            min-height: 400px;
+        }
+
+        /* Form Styling matches the screenshot */
+        .form-section {
+            padding: 4rem 2rem;
+            background: #fff;
+        }
+
+        .form-container-custom {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .custom-form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .custom-form-group label {
             display: block;
             margin-bottom: 0.5rem;
-            color: var(--text-secondary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #333;
         }
 
-        .form-control {
+        .custom-form-control {
             width: 100%;
-            padding: 1rem;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--glass-border);
-            border-radius: 8px;
-            color: white;
-            font-family: inherit;
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            color: #333;
+            background-color: #fff;
+            transition: border-color 0.2s;
         }
 
-        .form-control:focus {
+        .custom-form-control:focus {
+            border-color: #3b82f6;
             outline: none;
-            border-color: var(--accent-color);
+        }
+
+        .submit-btn {
+            background-color: #3b82f6;
+            /* Blue as in screenshot */
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 6px;
+            width: 100%;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .submit-btn:hover {
+            background-color: #2563eb;
+        }
+
+        @media (max-width: 768px) {
+            .contact-hero-container {
+                flex-direction: column;
+            }
+
+            .contact-hero-image {
+                min-height: 300px;
+            }
         }
     </style>
 </head>
@@ -172,40 +256,96 @@
         </div>
     </nav>
 
-    <div class="container">
-        <header class="page-header">
-            <h1 class="text-gradient" style="font-size: 3rem;">Get in Touch</h1>
-            <p style="color: var(--text-secondary); margin-top: 1rem;">We'd love to hear from you.</p>
-        </header>
-
-        <section class="section-padding" style="padding-top: 0;">
-            <div class="glass-card" style="max-width: 600px; margin: 0 auto;">
-                <div style="text-align: center; margin-bottom: 2rem;">
-                    <!-- Added map/contact image -->
-                    <img src="assets/contact.jpg" alt="Contact Us"
-                        style="width: 100%; border-radius: 8px; margin-bottom: 2rem; max-height: 200px; object-fit: cover;">
-                    <i class="fas fa-map-marker-alt fa-2x" style="color: var(--accent-color); margin-bottom: 1rem;"></i>
-                    <p>Daejeon, South Korea</p>
-                </div>
-                <form action="#" method="POST">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" class="form-control" placeholder="Your Name">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" class="form-control" placeholder="your@email.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" rows="5" class="form-control" placeholder="How can we help?"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary"
-                        style="width: 100%; border: none; cursor: pointer;">Send Message</button>
-                </form>
+    <!-- New Hero Section -->
+    <section class="contact-hero-section">
+        <div class="contact-hero-container">
+            <div class="contact-hero-text">
+                <h1>Contact Us</h1>
+                <p>제품에 대한 궁금증이나 질문이 있으시면 연락주세요. 전화번호를 남겨주시면 좀더 상세하고 기술적인 궁금증에 대해 기술인력이 직접 전화드리겠습니다.</p>
             </div>
-        </section>
-    </div>
+            <div class="contact-hero-image" style="background-image: url('assets/contact.jpg');"></div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="form-section">
+        <div class="form-container-custom">
+            <!-- TODO: Google Apps Script 연동을 위해 id="contactForm"을 사용하며, 실제 전송 로직은 script.js에서 처리합니다. -->
+            <form id="contactForm">
+                <!-- 이름 -->
+                <div class="custom-form-group">
+                    <label for="name">이름 *</label>
+                    <input type="text" id="name" name="name" class="custom-form-control" placeholder="Your Name"
+                        required>
+                </div>
+
+                <!-- 소속기관 -->
+                <div class="custom-form-group">
+                    <label for="organization">소속기관 *</label>
+                    <input type="text" id="organization" name="organization" class="custom-form-control" required>
+                </div>
+
+                <!-- Email -->
+                <div class="custom-form-group">
+                    <label for="email">Email *</label>
+                    <div style="position: relative;">
+                        <i class="far fa-envelope"
+                            style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #aaa;"></i>
+                        <input type="email" id="email" name="email" class="custom-form-control" placeholder="Your email"
+                            style="padding-left: 40px;" required>
+                    </div>
+                </div>
+
+                <!-- Phone -->
+                <div class="custom-form-group">
+                    <label for="phone">Phone</label>
+                    <div style="display: flex; gap: 10px;">
+                        <div style="position: relative; width: 120px;">
+                            <select class="custom-form-control" name="country_code"
+                                style="appearance: none; padding-left: 35px;">
+                                <option value="82">KR +82</option>
+                                <option value="1">US +1</option>
+                                <option value="86">CN +86</option>
+                                <option value="81">JP +81</option>
+                            </select>
+                            <span
+                                style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); font-size: 1.2rem;">🇰🇷</span>
+                            <i class="fas fa-caret-down"
+                                style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); color: #aaa; pointer-events: none;"></i>
+                        </div>
+                        <input type="tel" id="phone" name="phone" class="custom-form-control"
+                            placeholder="010-1234-5678">
+                    </div>
+                </div>
+
+                <!-- Products / 관심사항 -->
+                <div class="custom-form-group">
+                    <label for="category">Products / 관심사항 *</label>
+                    <div style="position: relative;">
+                        <select id="category" name="category" class="custom-form-control" required
+                            style="appearance: none;">
+                            <option value="">선택해주세요</option>
+                            <option value="H Series">H Series</option>
+                            <option value="M Series">M Series</option>
+                            <option value="S/P/A Series">S/P/A Series</option>
+                            <option value="정기검사요청">정기검사요청</option>
+                            <option value="기타">기타</option>
+                        </select>
+                        <i class="fas fa-chevron-down"
+                            style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); color: #aaa; pointer-events: none;"></i>
+                    </div>
+                </div>
+
+                <!-- 요청사항 -->
+                <div class="custom-form-group">
+                    <label for="message">요청사항</label>
+                    <textarea id="message" name="message" rows="6" class="custom-form-control"></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Inquiry</button>
+            </form>
+        </div>
+    </section>
 
     <footer>
         <div class="container">
