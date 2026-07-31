@@ -119,80 +119,7 @@
 
 <body>
 
-    <nav class="navbar">
-        <div class="container">
-            <a href="index.html" class="logo">
-                <span class="logo-r">C</span><span class="logo-b">GI</span>TEC
-            </a>
-            <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li class="dropdown">
-                    <a href="products.html" class="active">Products <i class="fas fa-chevron-down"
-                            style="font-size: 0.7em; margin-left: 4px;"></i></a>
-                    <div class="dropdown-content">
-                        <a href="products-h.html" class="dropdown-item"><i class="fas fa-video"></i>
-                            <div class="dropdown-text"><span class="dropdown-title">H-Series</span><span
-                                    class="dropdown-desc">Imaging Spectrometer</span></div>
-                        </a>
-                        <a href="products-m.html" class="dropdown-item"><i class="fas fa-video"></i>
-                            <div class="dropdown-text"><span class="dropdown-title">M-Series</span><span
-                                    class="dropdown-desc">Customizable Spectrometer</span></div>
-                        </a>
-                        <a href="products-a.html" class="dropdown-item"><i class="fas fa-radiation"></i>
-                            <div class="dropdown-text"><span class="dropdown-title">A-Series</span><span
-                                    class="dropdown-desc">High-Performance RIID</span></div>
-                        </a>
-                        <a href="products-s.html" class="dropdown-item"><i class="fas fa-radiation"></i>
-                            <div class="dropdown-text"><span class="dropdown-title">S-Series</span><span
-                                    class="dropdown-desc">Industrial Spectrometer</span></div>
-                        </a>
-                        <a href="products-p.html" class="dropdown-item"><i class="fas fa-video"></i>
-                            <div class="dropdown-text"><span class="dropdown-title">P-Series</span><span
-                                    class="dropdown-desc">Collimated Imaging</span></div>
-                        </a>
-                        <a href="products-t.html" class="dropdown-item"><i class="fas fa-video"></i>
-                            <div class="dropdown-text"><span class="dropdown-title">T-Series</span><span
-                                    class="dropdown-desc">Ruggedized Module</span></div>
-                        </a>
-                        <a href="products-g.html" class="dropdown-item"><i class="fas fa-video"></i>
-                            <div class="dropdown-text"><span class="dropdown-title">GammAware</span><span
-                                    class="dropdown-desc">3D Imaging System</span></div>
-                        </a>
-                    </div>
-                </li>
-                <li class="dropdown">
-                    <a href="applications.html">Applications <i class="fas fa-chevron-down"
-                            style="font-size: 0.7em; margin-left: 4px;"></i></a>
-                    <div class="dropdown-content">
-                        <a href="applications-nuclear.html" class="dropdown-item"><i class="fas fa-shield-alt"></i>
-                            <div class="dropdown-text"><span class="dropdown-title">원자력발전</span><span
-                                    class="dropdown-desc">Nuclear Power</span></div>
-                        </a>
-                        <a href="applications-waste.html" class="dropdown-item"><i class="fas fa-trash-alt"></i>
-                            <div class="dropdown-text"><span class="dropdown-title">방사선 폐기물</span><span
-                                    class="dropdown-desc">Radioactive Waste</span></div>
-                        </a>
-                        <a href="applications-cbrne.html" class="dropdown-item"><i class="fas fa-biohazard"></i>
-                            <div class="dropdown-text"><span class="dropdown-title">화생방분야</span><span
-                                    class="dropdown-desc">CBRNE / Security</span></div>
-                        </a>
-                        <a href="applications-medical.html" class="dropdown-item"><i class="fas fa-heartbeat"></i>
-                            <div class="dropdown-text"><span class="dropdown-title">의료분야</span><span
-                                    class="dropdown-desc">Medical</span></div>
-                        </a>
-                        <a href="applications-defense.html" class="dropdown-item"><i class="fas fa-fighter-jet"></i>
-                            <div class="dropdown-text"><span class="dropdown-title">국방 분야</span><span
-                                    class="dropdown-desc">Defense</span></div>
-                        </a>
-                    </div>
-                </li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div id="nav-placeholder"></div>
 
     <!-- Hero Section -->
     <div class="product-hero-h">
@@ -251,6 +178,21 @@
                         <li>- Defense</li>
                     </ul>
                 </div>
+
+                <!-- Video Section -->
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="https://www.youtube.com/watch?v=bNUufuU0JhU&amp;t=3s" target="_blank"
+                        rel="noopener noreferrer" data-youtube-id="bNUufuU0JhU" data-youtube-start="3"
+                        style="position: relative; display: inline-block; width: 90%;">
+                        <img src="assets/H_video.jpg" alt="Video Placeholder"
+                            style="width: 100%; border-radius: 8px; cursor: pointer;">
+                        <div style="position: absolute; top:50%; left:50%; transform: translate(-50%, -50%);">
+                            <i class="fas fa-play-circle" style="font-size: 3rem; color: rgba(255, 235, 59, 0.9);"></i>
+                        </div>
+                    </a>
+                    <h3 style="color: #ff4757; margin-top: 1rem; font-weight: 700; font-size: 1rem;">방사선이 있는 곳에
+                        필요한 가장 최상의 솔루션 !!</h3>
+                </div>
             </div>
             <div style="flex: 1; min-width: 300px;">
                 <img src="assets/H1.jpg" alt="H-Series Application"
@@ -259,18 +201,6 @@
                     10-minute isotope-specific images of an RHR pump room in a U.S. nuclear facility
                 </p>
             </div>
-        </div>
-
-        <!-- Video Section -->
-        <div style="text-align: center; margin-bottom: 5rem;">
-            <div style="position: relative; max-width: 900px; margin: 0 auto;">
-                <img src="assets/H_video.jpg" alt="Video Placeholder"
-                    style="width: 100%; border-radius: 8px; cursor: pointer;">
-                <div style="position: absolute; top:50%; left:50%; transform: translate(-50%, -50%);">
-                    <i class="fas fa-play-circle" style="font-size: 5rem; color: rgba(255, 235, 59, 0.9);"></i>
-                </div>
-            </div>
-            <h3 style="color: #ff4757; margin-top: 1.5rem; font-weight: 700;">방사선이 있는 곳에 필요한 가장 최상의 솔루션 !!</h3>
         </div>
 
         <!-- Specs Table -->
@@ -291,7 +221,6 @@
                         <th>Temp.<br>(°F)</th>
                         <th>Startup<br>Time (분)</th>
                         <th>User<br>Interface</th>
-                        <th>Spec.<br>Sheet</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -311,7 +240,6 @@
                         <td>
                             < 1.5</td>
                         <td>Tablet</td>
-                        <td><a href="#" class="download-btn">[다운로드]</a></td>
                     </tr>
                     <tr>
                         <td><img src="assets/H420.png" class="model-img"></td>
@@ -329,7 +257,6 @@
                         <td>
                             < 1.5</td>
                         <td>Tablet</td>
-                        <td><a href="#" class="download-btn">[다운로드]</a></td>
                     </tr>
                     <tr>
                         <td><img src="assets/H420.png" class="model-img"></td>
@@ -347,7 +274,6 @@
                         <td>
                             < 1.5</td>
                         <td>Tablet</td>
-                        <td><a href="#" class="download-btn">[다운로드]</a></td>
                     </tr>
                     <tr>
                         <td><img src="assets/H420.png" class="model-img"></td>
@@ -365,7 +291,6 @@
                         <td>
                             < 1.5</td>
                         <td>Tablet</td>
-                        <td><a href="#" class="download-btn">[다운로드]</a></td>
                     </tr>
                     <tr>
                         <td><img src="assets/H420.png" class="model-img"></td>
@@ -383,7 +308,6 @@
                         <td>
                             < 1.5</td>
                         <td>Tablet</td>
-                        <td><a href="#" class="download-btn">[다운로드]</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -391,32 +315,7 @@
 
     </div>
 
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-col" style="flex: 2;">
-                    <a href="#" class="logo" style="margin-bottom: 1rem; display: inline-block;">
-                        <img src="assets/logo.png" alt="CGITEC"
-                            style="height: 30px; margin-right: 10px; vertical-align: middle;">
-                        CGITEC
-                    </a>
-                    <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
-                        © CGITEC 2021<br>
-                        씨지텍 34187 대전광역시 유성구 계룡로141번길 29-25 229-8, 29-25 (TEL: +82-42-825-1838)<br>
-                        CGITEC, 29-25 Gyeryong-ro 141beon-gil, Yuseong-gu, Daejeon 34187, Korea
-                    </p>
-                </div>
-                <div class="footer-col">
-                    <ul>
-                        <li><a href="index.html">HOME</a></li>
-                        <li><a href="products.html">PRODUCTS</a></li>
-                        <li><a href="applications.html">APPLICATIONS</a></li>
-                        <li><a href="contact.html">CONTACT</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
     <script src="script.js"></script>
 </body>

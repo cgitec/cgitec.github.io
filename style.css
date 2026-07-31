@@ -102,6 +102,18 @@ ul {
   position: relative;
 }
 
+.dropdown-label {
+  font-weight: 500;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  cursor: default;
+}
+
+.dropdown:hover .dropdown-label,
+.dropdown-label.active {
+  color: var(--accent-color);
+}
+
 .dropdown-content {
   display: none;
   position: absolute;

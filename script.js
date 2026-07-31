@@ -1,4 +1,41 @@
-document.addEventListener('DOMContentLoaded', () => {
+// nav와 footer는 partials/ 안에서 한 번만 정의하고 모든 페이지가 공유합니다.
+// 각 페이지의 <div id="nav-placeholder"> / <div id="footer-placeholder">를 실제 마크업으로 교체합니다.
+async function loadPartial(placeholderId, path) {
+    const placeholder = document.getElementById(placeholderId);
+    if (!placeholder) return;
+
+    try {
+        const response = await fetch(path);
+        placeholder.outerHTML = await response.text();
+    } catch (err) {
+        console.error(`${path} 로드 실패:`, err);
+    }
+}
+
+async function loadLayout() {
+    await Promise.all([
+        loadPartial('nav-placeholder', 'partials/nav.html'),
+        loadPartial('footer-placeholder', 'partials/footer.html'),
+    ]);
+
+    // 현재 페이지에 해당하는 메뉴 항목을 강조합니다.
+    const currentPage = location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-links > li > a').forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+            link.classList.add('active');
+        }
+    });
+    document.querySelectorAll('.dropdown').forEach(dropdown => {
+        if (dropdown.querySelector(`.dropdown-content a[href="${currentPage}"]`)) {
+            const label = dropdown.querySelector('.dropdown-label');
+            if (label) label.classList.add('active');
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
+    await loadLayout();
+
     // Mobile Menu Toggle
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');

@@ -10,89 +10,41 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .app-hero-waste {
+            background: url('assets/waste.jpg') center/cover no-repeat;
+            height: 300px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin-top: var(--nav-height);
+        }
+
+        .app-hero-waste::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .app-hero-waste .container {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
 </head>
 
 <body>
 
-    <nav class="navbar">
-        <div class="container">
-            <a href="index.html" class="logo">
-                <span class="logo-r">C</span><span class="logo-b">GI</span>TEC
-            </a>
-            <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li class="dropdown">
-                    <a href="products.html">Products <i class="fas fa-chevron-down"
-                            style="font-size: 0.7em; margin-left: 4px;"></i></a>
-                    <div class="dropdown-content">
-                        <a href="products-h.html" class="dropdown-item"><i class="fas fa-video"></i>
-                            <div class="dropdown-text"><span class="dropdown-title">H-Series</span><span
-                                    class="dropdown-desc">Imaging Spectrometer</span></div>
-                        </a>
-                        <a href="products-m.html" class="dropdown-item"><i class="fas fa-video"></i>
-                            <div class="dropdown-text"><span class="dropdown-title">M-Series</span><span
-                                    class="dropdown-desc">Customizable Spectrometer</span></div>
-                        </a>
-                        <a href="products-a.html" class="dropdown-item"><i class="fas fa-radiation"></i>
-                            <div class="dropdown-text"><span class="dropdown-title">A-Series</span><span
-                                    class="dropdown-desc">High-Performance RIID</span></div>
-                        </a>
-                        <a href="products-s.html" class="dropdown-item"><i class="fas fa-radiation"></i>
-                            <div class="dropdown-text"><span class="dropdown-title">S-Series</span><span
-                                    class="dropdown-desc">Industrial Spectrometer</span></div>
-                        </a>
-                        <a href="products-p.html" class="dropdown-item"><i class="fas fa-video"></i>
-                            <div class="dropdown-text"><span class="dropdown-title">P-Series</span><span
-                                    class="dropdown-desc">Collimated Imaging</span></div>
-                        </a>
-                        <a href="products-t.html" class="dropdown-item"><i class="fas fa-video"></i>
-                            <div class="dropdown-text"><span class="dropdown-title">T-Series</span><span
-                                    class="dropdown-desc">Ruggedized Module</span></div>
-                        </a>
-                        <a href="products-g.html" class="dropdown-item"><i class="fas fa-video"></i>
-                            <div class="dropdown-text"><span class="dropdown-title">GammAware</span><span
-                                    class="dropdown-desc">3D Imaging System</span></div>
-                        </a>
-                    </div>
-                </li>
-                <li class="dropdown">
-                    <a href="applications.html" class="active">Applications <i class="fas fa-chevron-down"
-                            style="font-size: 0.7em; margin-left: 4px;"></i></a>
-                    <div class="dropdown-content">
-                        <a href="applications-nuclear.html" class="dropdown-item"><i class="fas fa-shield-alt"></i>
-                            <div class="dropdown-text"><span class="dropdown-title">원자력발전</span><span
-                                    class="dropdown-desc">Nuclear Power</span></div>
-                        </a>
-                        <a href="applications-waste.html" class="dropdown-item"><i class="fas fa-trash-alt"></i>
-                            <div class="dropdown-text"><span class="dropdown-title">방사선 폐기물</span><span
-                                    class="dropdown-desc">Radioactive Waste</span></div>
-                        </a>
-                        <a href="applications-cbrne.html" class="dropdown-item"><i class="fas fa-biohazard"></i>
-                            <div class="dropdown-text"><span class="dropdown-title">화생방분야</span><span
-                                    class="dropdown-desc">CBRNE / Security</span></div>
-                        </a>
-                        <a href="applications-medical.html" class="dropdown-item"><i class="fas fa-heartbeat"></i>
-                            <div class="dropdown-text"><span class="dropdown-title">의료분야</span><span
-                                    class="dropdown-desc">Medical</span></div>
-                        </a>
-                        <a href="applications-defense.html" class="dropdown-item"><i class="fas fa-fighter-jet"></i>
-                            <div class="dropdown-text"><span class="dropdown-title">국방 분야</span><span
-                                    class="dropdown-desc">Defense</span></div>
-                        </a>
-                    </div>
-                </li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div id="nav-placeholder"></div>
 
-    <div class="product-detail-hero">
+    <div class="app-hero-waste">
         <div class="container">
-            <h1 class="text-gradient" style="font-size: 3rem;">방사선폐기물</h1>
-            <p class="hero-desc">Radioactive Waste Management</p>
+            <h1 style="color: white; font-size: 3rem; font-weight: 700;">방사선폐기물</h1>
+            <p style="color: #eee; margin-top: 0.5rem;">Radioactive Waste Management</p>
         </div>
     </div>
 
@@ -174,13 +126,7 @@
 
     </div>
 
-    <footer>
-        <div class="container">
-            <div style="text-align: center; color: var(--text-secondary); font-size: 0.9rem;">
-                &copy; 2026 CGITEC. All rights reserved.
-            </div>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
     <script src="script.js"></script>
 </body>
