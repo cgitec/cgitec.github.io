@@ -18,9 +18,7 @@
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo">
-                <img src="assets/logo.png" alt="CGITEC Logo"
-                    style="height: 40px; vertical-align: middle; margin-right: 10px;">
-                CGITEC
+                <span class="logo-r">C</span><span class="logo-b">GI</span>TEC
             </a>
             <div class="menu-toggle">
                 <i class="fas fa-bars"></i>
@@ -28,8 +26,7 @@
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li class="dropdown">
-                    <a href="products.html">Products <i class="fas fa-chevron-down"
-                            style="font-size: 0.7em; margin-left: 4px;"></i></a>
+                    Products
                     <div class="dropdown-content">
                         <a href="products-h.html" class="dropdown-item"><i class="fas fa-video"></i>
                             <div class="dropdown-text"><span class="dropdown-title">H-Series</span><span
@@ -62,8 +59,7 @@
                     </div>
                 </li>
                 <li class="dropdown">
-                    <a href="applications.html">Applications <i class="fas fa-chevron-down"
-                            style="font-size: 0.7em; margin-left: 4px;"></i></a>
+                    Applications
                     <div class="dropdown-content">
                         <a href="applications-nuclear.html" class="dropdown-item"><i class="fas fa-shield-alt"></i>
                             <div class="dropdown-text"><span class="dropdown-title">원자력발전</span><span
@@ -96,10 +92,13 @@
     <header class="home-hero">
         <div class="home-hero-overlay"></div>
         <div class="home-hero-content fade-in-up">
-            <!-- <h1>방사선 응용 어플리케이션 개발</h1>
-            <p>사용자 요구에 부응하는 OEM 개발가능</p>
-            <p>3D Position Sensing (Raw-Data) 제공</p>
-            <p>약 1kg 미만의 P400급의 CZT 센서 탑재</p> -->
+            <h1>방사선원 시각화 토탈 솔루션</h1>
+            <ul class="home-hero-features">
+                <li>실시간 방사선 핵종분석 및 위치추적</li>
+                <li>360도 실시간 이미징 및 HPGe급 에너지분해능</li>
+                <li>레이저를 이용한 거리측정 및 방사선의 정량적 해석</li>
+                <li>방수/방진 및 콤팩트한 디자인</li>
+            </ul>
         </div>
     </header>
 
@@ -108,18 +107,26 @@
         <!-- Video Section -->
         <section class="video-grid">
             <div class="video-card fade-in-up delay-100">
-                <div class="video-thumb-container">
-                    <img src="assets/video_1.png" alt="Spot Robot" class="video-thumb">
-                    <div class="video-play-icon"><i class="fab fa-youtube"></i></div>
-                </div>
+                <!-- data-youtube-id가 있으면 script.js가 라이트박스로 재생합니다.
+                     JS가 동작하지 않으면 href로 유튜브가 새 탭에 열립니다. -->
+                <a href="https://www.youtube.com/watch?v=UrVhQOmZR3s&amp;t=3s" class="video-link" target="_blank"
+                    rel="noopener noreferrer" data-youtube-id="UrVhQOmZR3s" data-youtube-start="3">
+                    <div class="video-thumb-container">
+                        <img src="assets/video_1.png" alt="Spot Robot" class="video-thumb">
+                        <div class="video-play-icon"><i class="fab fa-youtube"></i></div>
+                    </div>
+                </a>
                 <h3 class="video-title">H3D H series on a Spot Robot</h3>
                 <p>드론타입으로 융합시킨 로봇개와 H 시리즈를 H기반으로 결합한 원격 방사선 핫스팟 검색시스템</p>
             </div>
             <div class="video-card fade-in-up delay-200">
-                <div class="video-thumb-container">
-                    <img src="assets/gammAware_movie.png" alt="GammAware" class="video-thumb">
-                    <div class="video-play-icon"><i class="fab fa-youtube"></i></div>
-                </div>
+                <a href="https://www.youtube.com/watch?v=UEXAFfTusRs&amp;t=3s" class="video-link" target="_blank"
+                    rel="noopener noreferrer" data-youtube-id="UEXAFfTusRs" data-youtube-start="3">
+                    <div class="video-thumb-container">
+                        <img src="assets/gammAware_movie.png" alt="GammAware" class="video-thumb">
+                        <div class="video-play-icon"><i class="fab fa-youtube"></i></div>
+                    </div>
+                </a>
                 <h3 class="video-title">3D Radiation Mapping and Visualization Tool H3D GammAware</h3>
                 <p>H3D H 및 M 시리즈의 3D Radiation Imaging 기능과 융합기술을 기반으로 한 공간 맵핑 기술을 결합하여 오염지역의 계측결과를 이상 모델의 위치를 정확한 공간에서
                     확인할 수 있는 시스템 입니다.</p>
@@ -153,7 +160,7 @@
             </div>
 
             <!-- Bottom Row: S, P, T, GammAware -->
-            <div class="product-flex-home">
+            <div class="product-flex-home product-flex-home--quad">
                 <a href="products-s.html" class="product-card-home fade-in-up delay-100">
                     <img src="assets/S100.jpg" alt="S Series" style="object-fit: cover;">
                     <h3>S Series : 설치형 감마선 검출기</h3>
@@ -234,7 +241,7 @@
                 <div class="footer-col">
                     <ul>
                         <li><a href="index.html">HOME</a></li>
-                        <li><a href="producs.html">PRODUCTS</a></li>
+                        <li><a href="products.html">PRODUCTS</a></li>
                         <li><a href="applications.html">APPLICATIONS</a></li>
                         <li><a href="contact.html">CONTACT</a></li>
                     </ul>

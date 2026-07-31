@@ -54,6 +54,84 @@ document.addEventListener('DOMContentLoaded', () => {
         el.style.opacity = '0'; // Initial state
         observer.observe(el);
     });
+    // YouTube Lightbox (data-youtube-id를 가진 링크에 적용)
+    const videoLinks = document.querySelectorAll('[data-youtube-id]');
+    if (videoLinks.length) {
+        const modal = document.createElement('div');
+        modal.className = 'video-modal';
+        modal.innerHTML = `
+            <div class="video-modal-frame">
+                <button class="video-modal-close" type="button" aria-label="닫기">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>`;
+        document.body.appendChild(modal);
+
+        const frame = modal.querySelector('.video-modal-frame');
+        const closeButton = modal.querySelector('.video-modal-close');
+        let iframe = null;
+        let lastFocused = null;
+
+        const openModal = (videoId, startSeconds) => {
+            const params = new URLSearchParams({ autoplay: '1', rel: '0' });
+            if (startSeconds) {
+                params.set('start', startSeconds);
+            }
+            iframe = document.createElement('iframe');
+            iframe.src = `https://www.youtube.com/embed/${videoId}?${params}`;
+            iframe.title = 'YouTube video player';
+            iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+            iframe.allowFullscreen = true;
+            frame.appendChild(iframe);
+
+            lastFocused = document.activeElement;
+            modal.classList.add('active');
+            document.body.classList.add('modal-open');
+            // visibility가 실제로 visible이 된 다음 프레임에서 포커스를 옮깁니다.
+            requestAnimationFrame(() => closeButton.focus());
+        };
+
+        const closeModal = () => {
+            if (!modal.classList.contains('active')) {
+                return;
+            }
+            modal.classList.remove('active');
+            document.body.classList.remove('modal-open');
+            // iframe을 제거해야 재생이 완전히 멈춥니다.
+            if (iframe) {
+                iframe.remove();
+                iframe = null;
+            }
+            if (lastFocused) {
+                lastFocused.focus();
+            }
+        };
+
+        videoLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+                // Ctrl/Cmd/가운데 클릭은 새 탭으로 열리도록 그대로 둡니다.
+                if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) {
+                    return;
+                }
+                e.preventDefault();
+                openModal(this.dataset.youtubeId, this.dataset.youtubeStart);
+            });
+        });
+
+        // 유튜브 창 밖(어두운 배경)을 클릭하면 닫힙니다.
+        modal.addEventListener('click', e => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+        closeButton.addEventListener('click', closeModal);
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+    }
+
     // Contact Form Handling (Google Apps Script)
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {

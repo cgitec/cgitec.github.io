@@ -116,6 +116,75 @@
             background-color: #2563eb;
         }
 
+        /* Custom country-code dropdown (renders real flag images, unlike native <select><option>) */
+        .cc-select {
+            position: relative;
+            width: 120px;
+        }
+
+        .cc-toggle {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 0.8rem 0.6rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            background: #fff;
+            font-size: 1rem;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .cc-toggle .fa-caret-down {
+            margin-left: auto;
+            color: #aaa;
+            font-size: 0.8rem;
+        }
+
+        .cc-flag {
+            width: 20px;
+            height: 15px;
+            object-fit: cover;
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+
+        .cc-list {
+            display: none;
+            position: absolute;
+            top: calc(100% + 4px);
+            left: 0;
+            width: 140px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            list-style: none;
+            margin: 0;
+            padding: 4px;
+            z-index: 20;
+        }
+
+        .cc-list.open {
+            display: block;
+        }
+
+        .cc-list li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0.5rem 0.6rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            color: #333;
+        }
+
+        .cc-list li:hover {
+            background: #f0f4ff;
+        }
+
         @media (max-width: 768px) {
             .contact-hero-container {
                 flex-direction: column;
@@ -133,9 +202,7 @@
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo">
-                <img src="assets/logo.png" alt="CGITEC Logo"
-                    style="height: 40px; vertical-align: middle; margin-right: 10px;">
-                CGITEC
+                <span class="logo-r">C</span><span class="logo-b">GI</span>TEC
             </a>
             <div class="menu-toggle">
                 <i class="fas fa-bars"></i>
@@ -250,7 +317,6 @@
                     </div>
                 </li>
 
-                <li><a href="about.html">About</a></li>
                 <li><a href="contact.html" class="active">Contact</a></li>
             </ul>
         </div>
@@ -300,18 +366,27 @@
                 <div class="custom-form-group">
                     <label for="phone">Phone</label>
                     <div style="display: flex; gap: 10px;">
-                        <div style="position: relative; width: 120px;">
-                            <select class="custom-form-control" name="country_code"
-                                style="appearance: none; padding-left: 35px;">
-                                <option value="82">KR +82</option>
-                                <option value="1">US +1</option>
-                                <option value="86">CN +86</option>
-                                <option value="81">JP +81</option>
-                            </select>
-                            <span
-                                style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); font-size: 1.2rem;">🇰🇷</span>
-                            <i class="fas fa-caret-down"
-                                style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); color: #aaa; pointer-events: none;"></i>
+                        <div class="cc-select" id="ccSelect">
+                            <button type="button" class="cc-toggle" id="ccToggle">
+                                <img class="cc-flag" id="ccFlag" src="https://flagcdn.com/24x18/kr.png" alt="KR">
+                                <span id="ccCode">+82</span>
+                                <i class="fas fa-caret-down"></i>
+                            </button>
+                            <ul class="cc-list" id="ccList">
+                                <li data-value="82" data-flag="kr" data-code="+82">
+                                    <img class="cc-flag" src="https://flagcdn.com/24x18/kr.png" alt="KR"> KR +82
+                                </li>
+                                <li data-value="1" data-flag="us" data-code="+1">
+                                    <img class="cc-flag" src="https://flagcdn.com/24x18/us.png" alt="US"> US +1
+                                </li>
+                                <li data-value="86" data-flag="cn" data-code="+86">
+                                    <img class="cc-flag" src="https://flagcdn.com/24x18/cn.png" alt="CN"> CN +86
+                                </li>
+                                <li data-value="81" data-flag="jp" data-code="+81">
+                                    <img class="cc-flag" src="https://flagcdn.com/24x18/jp.png" alt="JP"> JP +81
+                                </li>
+                            </ul>
+                            <input type="hidden" name="country_code" id="ccValue" value="82">
                         </div>
                         <input type="tel" id="phone" name="phone" class="custom-form-control"
                             placeholder="010-1234-5678">
@@ -356,6 +431,36 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        (function () {
+            const toggle = document.getElementById('ccToggle');
+            const list = document.getElementById('ccList');
+            const flagImg = document.getElementById('ccFlag');
+            const codeText = document.getElementById('ccCode');
+            const valueInput = document.getElementById('ccValue');
+
+            if (!toggle) return;
+
+            toggle.addEventListener('click', function (e) {
+                e.stopPropagation();
+                list.classList.toggle('open');
+            });
+
+            list.addEventListener('click', function (e) {
+                const li = e.target.closest('li');
+                if (!li) return;
+                flagImg.src = 'https://flagcdn.com/24x18/' + li.dataset.flag + '.png';
+                flagImg.alt = li.dataset.flag.toUpperCase();
+                codeText.textContent = li.dataset.code;
+                valueInput.value = li.dataset.value;
+                list.classList.remove('open');
+            });
+
+            document.addEventListener('click', function () {
+                list.classList.remove('open');
+            });
+        })();
+    </script>
 </body>
 
 </html>
