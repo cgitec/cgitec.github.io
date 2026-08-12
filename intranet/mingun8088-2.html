@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H3D Mingun digital-ASIC device</title>
+    <style>
+        :root {
+            /* 장비 UI가 상정하는 화면 크기. 잘리거나 여백이 남으면 이 값을 조절하세요 */
+            --base-w: 1600;
+            --base-h: 1000;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            padding: 10px;
+            font-family: "Segoe UI", "Malgun Gothic", sans-serif;
+            background: #f8f9fa;
+        }
+
+        .frame-set {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .cell {
+            min-width: 0; /* grid 아이템이 내용 때문에 넘치지 않도록 */
+        }
+
+        .label {
+            display: inline-block;
+            margin-bottom: 4px;
+            font-size: 0.85rem;
+            color: #0984e3;
+            text-decoration: none;
+        }
+
+        .label:hover { text-decoration: underline; }
+
+        /* 장비 화면을 통째로 축소해 담는 창 */
+        .viewport {
+            position: relative;
+            width: 100%;
+            aspect-ratio: var(--base-w) / var(--base-h);
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background: #000;
+        }
+
+        .frame {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: calc(var(--base-w) * 1px);
+            height: calc(var(--base-h) * 1px);
+            border: 0;
+            transform: scale(var(--scale, 1));
+            transform-origin: top left;
+        }
+    </style>
+</head>
+<body>
+    <div class="frame-set">
+
+        <div class="cell">
+            <a class="label" href="http://192.168.131.185:8088" target="_blank">http://192.168.131.185:8088</a>
+            <div class="viewport">
+                <iframe class="frame" src="http://192.168.131.185:8088"></iframe>
+            </div>
+        </div>
+
+        <div class="cell">
+            <a class="label" href="http://192.168.131.186:8088" target="_blank">http://192.168.131.186:8088</a>
+            <div class="viewport">
+                <iframe class="frame" src="http://192.168.131.186:8088"></iframe>
+            </div>
+        </div>
+
+        <div class="cell">
+            <a class="label" href="http://192.168.131.187:8088" target="_blank">http://192.168.131.187:8088</a>
+            <div class="viewport">
+                <iframe class="frame" src="http://192.168.131.187:8088"></iframe>
+            </div>
+        </div>
+
+        <div class="cell">
+            <a class="label" href="http://192.168.131.188:8088" target="_blank">http://192.168.131.188:8088</a>
+            <div class="viewport">
+                <iframe class="frame" src="http://192.168.131.188:8088"></iframe>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // iframe은 장비 UI 원본 크기(--base-w)로 띄운 뒤, 셀 너비에 맞춰 축소한다.
+        function fitFrames() {
+            var base = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--base-w'));
+            document.querySelectorAll('.viewport').forEach(function (v) {
+                v.style.setProperty('--scale', v.clientWidth / base);
+            });
+        }
+
+        window.addEventListener('resize', fitFrames);
+        window.addEventListener('DOMContentLoaded', fitFrames);
+        fitFrames();
+    </script>
+</body>
+</html>

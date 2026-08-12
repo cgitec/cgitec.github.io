@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mingun 동시 비교</title>
+    <style>
+        :root {
+            --primary-color: #ffffff;
+            --secondary-color: #f8f9fa;
+            --text-primary: #2d3436;
+            --text-secondary: #636e72;
+            --accent-color: #0984e3;
+            --glass-border: rgba(0, 0, 0, 0.08);
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            background: var(--secondary-color);
+            color: var(--text-primary);
+            font-family: "Segoe UI", "Malgun Gothic", sans-serif;
+            line-height: 1.6;
+        }
+
+        .container { max-width: 760px; margin: 0 auto; }
+
+        h1 { margin: 0 0 6px; font-size: 1.8rem; }
+        header p { margin: 0 0 28px; color: var(--text-secondary); }
+
+        .panel {
+            background: var(--primary-color);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+            padding: 22px;
+            margin-bottom: 18px;
+        }
+
+        .panel h2 {
+            margin: 0 0 14px;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .row { display: flex; flex-wrap: wrap; gap: 10px; }
+
+        label.opt {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            padding: 8px 14px;
+            border: 1px solid var(--glass-border);
+            border-radius: 7px;
+            cursor: pointer;
+            font-family: Consolas, monospace;
+            font-size: 0.9rem;
+            user-select: none;
+        }
+
+        label.opt:hover { border-color: var(--accent-color); }
+        label.opt input { margin: 0; cursor: pointer; }
+
+        button {
+            padding: 11px 22px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            font-family: inherit;
+            color: #fff;
+            background: var(--accent-color);
+            border: 0;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+
+        button:hover { filter: brightness(1.08); }
+        button.ghost { background: #b2bec3; }
+
+        .hint {
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .note {
+            padding: 14px 16px;
+            border-left: 3px solid #fdcb6e;
+            background: #fffbf0;
+            border-radius: 0 7px 7px 0;
+            font-size: 0.88rem;
+            color: #6b5900;
+        }
+
+        footer {
+            margin-top: 30px;
+            padding-top: 16px;
+            border-top: 1px solid var(--glass-border);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        footer a { color: var(--accent-color); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Mingun 동시 비교</h1>
+            <p>선택한 장비를 화면에 타일 배치해 동시에 띄웁니다.</p>
+        </header>
+
+        <div class="panel">
+            <h2>포트</h2>
+            <div class="row" id="portRow">
+                <label class="opt"><input type="radio" name="port" value="80">80</label>
+                <label class="opt"><input type="radio" name="port" value="8080">8080</label>
+                <label class="opt"><input type="radio" name="port" value="8088" checked>8088</label>
+            </div>
+        </div>
+
+        <div class="panel">
+            <h2>장비</h2>
+            <div class="row" id="ipRow"></div>
+            <div class="hint">
+                <a href="#" id="selAll">전체 선택</a> &middot;
+                <a href="#" id="selNone">전체 해제</a> &middot;
+                <a href="#" id="sel1">.181&ndash;184</a> &middot;
+                <a href="#" id="sel2">.185&ndash;188</a>
+            </div>
+        </div>
+
+        <div class="panel">
+            <h2>실행</h2>
+            <div class="row">
+                <button id="openBtn">타일로 열기</button>
+                <button id="closeBtn" class="ghost">열었던 창 모두 닫기</button>
+            </div>
+            <div class="hint" id="status">선택된 장비: 0대</div>
+        </div>
+
+        <div class="note">
+            <strong>팝업 차단을 허용해야 합니다.</strong>
+            주소창 오른쪽에 차단 아이콘이 뜨면 <em>"localhost:8000의 팝업을 항상 허용"</em>을 선택하고 다시 눌러 주세요.
+            창이 하나만 열리는 것도 같은 이유입니다.
+        </div>
+
+        <footer>
+            장비 페이지는 최상위 창에서만 정상 동작합니다(펌웨어가 <code>window.parent</code>에 접근하기 때문).
+            그래서 iframe 대신 별도 창으로 띄웁니다.
+            &middot; <a href="index.html">인트라넷 목록</a>
+        </footer>
+    </div>
+
+    <script>
+        var IPS = [181, 182, 183, 184, 185, 186, 187, 188];
+        var opened = [];
+
+        var ipRow = document.getElementById('ipRow');
+        IPS.forEach(function (n) {
+            var l = document.createElement('label');
+            l.className = 'opt';
+            l.innerHTML = '<input type="checkbox" value="' + n + '">.' + n;
+            ipRow.appendChild(l);
+        });
+
+        function boxes() {
+            return Array.prototype.slice.call(ipRow.querySelectorAll('input'));
+        }
+
+        function selected() {
+            return boxes().filter(function (b) { return b.checked; }).map(function (b) { return b.value; });
+        }
+
+        function port() {
+            return document.querySelector('input[name=port]:checked').value;
+        }
+
+        function refresh() {
+            document.getElementById('status').textContent = '선택된 장비: ' + selected().length + '대';
+        }
+
+        ipRow.addEventListener('change', refresh);
+
+        function pick(fn) {
+            return function (e) {
+                e.preventDefault();
+                boxes().forEach(function (b) { b.checked = fn(parseInt(b.value, 10)); });
+                refresh();
+            };
+        }
+
+        document.getElementById('selAll').onclick  = pick(function () { return true; });
+        document.getElementById('selNone').onclick = pick(function () { return false; });
+        document.getElementById('sel1').onclick    = pick(function (n) { return n <= 184; });
+        document.getElementById('sel2').onclick    = pick(function (n) { return n >= 185; });
+
+        document.getElementById('openBtn').onclick = function () {
+            var list = selected();
+            if (!list.length) { alert('장비를 하나 이상 선택하세요.'); return; }
+
+            // 화면을 열 개수에 맞춰 격자로 나눈다. 2대는 좌우 분할, 3대 이상은 2열 격자.
+            var cols = list.length <= 2 ? list.length : 2;
+            var rows = Math.ceil(list.length / cols);
+
+            var sx = (window.screen.availLeft || 0);
+            var sy = (window.screen.availTop || 0);
+            var w  = Math.floor(window.screen.availWidth / cols);
+            var h  = Math.floor(window.screen.availHeight / rows);
+
+            var p = port();
+            list.forEach(function (n, i) {
+                var x = sx + (i % cols) * w;
+                var y = sy + Math.floor(i / cols) * h;
+                var url = 'http://192.168.131.' + n + ':' + p + '/';
+                var feat = 'popup=yes,left=' + x + ',top=' + y + ',width=' + w + ',height=' + h;
+                var win = window.open(url, 'mingun_' + n + '_' + p, feat);
+                if (win) { opened.push(win); }
+            });
+        };
+
+        document.getElementById('closeBtn').onclick = function () {
+            opened.forEach(function (w) { try { w.close(); } catch (e) {} });
+            opened = [];
+        };
+
+        // 기본값: 8088에서 유일하게 응답하는 .185
+        boxes().forEach(function (b) { if (b.value === '185') b.checked = true; });
+        refresh();
+    </script>
+</body>
+</html>
